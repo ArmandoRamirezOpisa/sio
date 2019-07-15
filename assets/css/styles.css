@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+.navbar-dark .navbar-nav .nav-link {
+    color: #fff !important;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    border: 1px solid #fff;
+    border-radius: 5px;
+    background: #404040;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+}
+
+.bg-dark {
+    background-color: #333333;
+}
+
+.dropdown-item {
+    border-bottom: 0.5px solid #333333;
+}
+
+.dropdown-item:hover {
+    background: #333333;
+    color: #fff;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+}
+
+.btn-outline-secondary {
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+.btn-outline-secondary:hover {
+    border: 1px solid #fff;
+    background: #404040;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+}
+
+.table td,
+.table th {
+    text-align: center;
+}
+
+.table tr:hover {
+    background: #cccccc;
+}
+
+.table tr td a.info-data {
+    color: #000;
+    font-size: 1.5rem;
+}
+
+.table tr td a.info-data:hover {
+    color: #404040;
+}
+
+.modal-body .list-group-item:hover {
+    background: #cccccc;
+}
+
+.green-info {
+    color: #004d00;
+}
+
+.red-info {
+    color: #cc0000;
+}
+
+.btn-customer div {
+    display: inline;
+}
+
+.btnStockDetail {
+    margin: 0 10px;
+}
+
+
+/*# sourceMappingURL=styles.css.map */
