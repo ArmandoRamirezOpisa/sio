@@ -69,4 +69,27 @@ class Welcome extends CI_Controller {
 		$this->load->view('listadoPedidos_view');
 		$this->load->view('modales/modalListadoPedidos');
 	}
+
+	public function iventario(){
+		$this->load->view('iventario_view');
+		$this->load->view('modales/modalInventario');
+	}
+
+	public function comprasConsolidadas(){
+		$this->load->view('comprasConsolidadas_view');
+		$this->load->view('modales/modalComprasConsolidadas');
+	}
+
+	public function transferenciaPremios(){
+		$this->load->view('transferenciaPremios_view');
+		$this->load->view('modales/modalTransferenciadePremios');
+	}
+
+	public function entradasSalidasDiversas(){
+		$this->load->view('entradasSalidasDiversas_view');
+	}
+
+	public function inventarioFisico(){
+		$this->load->view('inventarioFisico_view');
+	}
 }

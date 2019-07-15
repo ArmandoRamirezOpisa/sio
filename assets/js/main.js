@@ -134,27 +134,27 @@ function listadoPedidosScreen(){
 
 iventario.addEventListener('click',iventarioScreen);
 function iventarioScreen(){
-    cambiandoPantalla("Pantalla inventario");
+    cambiandoPantalla("Welcome/iventario","contenidoSio");
 }
 
 comprasConsolidadas.addEventListener('click',comprasConsolidadasScreen);
 function comprasConsolidadasScreen(){
-    cambiandoPantalla("Pantalla compras consolidadas");
+    cambiandoPantalla("Welcome/comprasConsolidadas","contenidoSio");
 }
 
 transferenciaPremios.addEventListener('click',transferenciaPremiosScreen);
 function transferenciaPremiosScreen(){
-    cambiandoPantalla("Pantalla transferencia de premios");
+    cambiandoPantalla("Welcome/transferenciaPremios","contenidoSio");
 }
 
 entradasSalidasDiversas.addEventListener('click',entradasSalidasDiversasScreen);
 function entradasSalidasDiversasScreen(){
-    cambiandoPantalla("Pantalla entradas y salidas diversas");
+    cambiandoPantalla("Welcome/entradasSalidasDiversas","contenidoSio");
 }
 
 inventarioFisico.addEventListener('click',inventarioFisicoScreen);
 function inventarioFisicoScreen(){
-    cambiandoPantalla("Pantalla inventario fisico");
+    cambiandoPantalla("Welcome/inventarioFisico","contenidoSio");
 }
 
 etiquetas.addEventListener('click',etiquetasScreen);
