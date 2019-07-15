@@ -92,4 +92,8 @@ class Welcome extends CI_Controller {
 	public function inventarioFisico(){
 		$this->load->view('inventarioFisico_view');
 	}
+
+	public function etiquetas(){
+		$this->load->view('etiquetas_view');
+	}
 }

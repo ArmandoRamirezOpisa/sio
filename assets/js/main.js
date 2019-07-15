@@ -159,7 +159,7 @@ function inventarioFisicoScreen(){
 
 etiquetas.addEventListener('click',etiquetasScreen);
 function etiquetasScreen(){
-    cambiandoPantalla("Pantalla etiquetas");
+    cambiandoPantalla("Welcome/etiquetas","contenidoSio");
 }
 
 monitor.addEventListener('click',monitorScreen);
