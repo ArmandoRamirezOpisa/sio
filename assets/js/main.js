@@ -1,4 +1,5 @@
 /* Menu SioWeb */
+let homeSIO = document.getElementById('homeSIO');
 let busquedaCanje = document.getElementById('busquedaCanje');
 let confirmarTarjetasEntregadas = document.getElementById('confirmarTarjetasEntregadas');
 let depositoSaldo = document.getElementById('depositoSaldo');
@@ -28,78 +29,107 @@ let sincronizarPremios = document.getElementById('sincronizarPremios');
 let participantes = document.getElementById('participantes');
 let tickets = document.getElementById('tickets');
 let correoLiverpool = document.getElementById('correoLiverpool');
-
 let salioSioWeb = document.getElementById('salioSioWeb');
 /* Fin Menu SioWeb */
 
-function cambiandoPantalla(pantalla){
-    console.log(`Aqui la va la ${ pantalla }`);
+function cambiandoPantalla(pantalla,seccion){
+    if(pantalla == "Welcome"){
+        window.location.reload();
+    }else{
+        $.ajax({
+        url: pantalla,
+        async: 'true',
+        cache: false,
+        contentType: "application/x-www-form-urlencoded",
+        dataType: "html",
+        error: function(object, error, anotherObject) {
+            console.log('Mensaje: ' + object.statusText + 'Status: ' + object.status);
+        },
+        global: true,
+        ifModified: false,
+        processData: true,
+        success: function(result) {
+            if (result == "0") {
+                window.location.reload();
+            } else {
+                $('#' + seccion).html(result);
+            }
+        },
+        timeout: 30000,
+        type: "GET"
+    });
+    }
 }
 
 /* Acciones para el cambio de pantalla */
+homeSIO.addEventListener('click',homeSIOScreen);
+function homeSIOScreen(){
+    cambiandoPantalla("Welcome","contenidoSio");
+}
+
 busquedaCanje.addEventListener('click',busquedaCanjeScreen);
 function busquedaCanjeScreen(){
-    cambiandoPantalla("Pantalla busqueda del canje");
+    cambiandoPantalla("Welcome/busquedaCanje","contenidoSio")
 }
 
 confirmarTarjetasEntregadas.addEventListener('click',confirmarTarjetasEntregadasScreen);
 function confirmarTarjetasEntregadasScreen(){
-    cambiandoPantalla("Pantalla confirmar tarjetas");
+    cambiandoPantalla("Welcome/confirmarTarjetasEntregadas","contenidoSio");
 }
 
 depositoSaldo.addEventListener('click',depositoSaldoScreen);
 function depositoSaldoScreen(){
-    cambiandoPantalla("Pantalla deposito saldo");
+    cambiandoPantalla("Welcome/depositoSaldo","contenidoSio");
 }
 
 envioActivacionesPendientes.addEventListener('click',envioActivacionesPendientesScreen);
 function envioActivacionesPendientesScreen(){
-    cambiandoPantalla("Pantalla envioActivaciones");
+    cambiandoPantalla("Welcome/envioActivacionesPendientes","contenidoSio");
 }
 
 depositoSaldoSolicitado.addEventListener('click',depositoSaldoSolicitadoScreen);
 function depositoSaldoSolicitadoScreen(){
-    cambiandoPantalla("Pantalla deposito saldo solicitado");
+    cambiandoPantalla("Welcome/depositoSaldoSolicitado","contenidoSio");
 }
 
 saldoLiverpool.addEventListener('click',saldoLiverpoolScreen);
 function saldoLiverpoolScreen(){
-    cambiandoPantalla("Pantalla saldo Liverpool");
+    cambiandoPantalla("Welcome/saldoLiverpool","contenidoSio");
 }
 
 pendientesXProgramar.addEventListener('click',pendientesXProgramarScreen);
 function pendientesXProgramarScreen(){
-    cambiandoPantalla("Pantalla pendientes por programar");
+    cambiandoPantalla("Welcome/pendientesXProgramar","contenidoSio");
 }
 
 notificacionCanjes.addEventListener('click',notificacionCanjesScreen);
 function notificacionCanjesScreen(){
-    cambiandoPantalla("Pantalla notificacion de canhes");
+    cambiandoPantalla("Welcome/notificacionCanjes","contenidoSio");
 }
 
 generarPedidos.addEventListener('click',generarPedidosScreen);
 function generarPedidosScreen(){
-    cambiandoPantalla("Pantalla generar pedidos");
+    cambiandoPantalla("Welcome/generarPedidos","contenidoSio");
 }
 
 estatusPedidos.addEventListener('click',estatusPedidosScreen);
 function estatusPedidosScreen(){
-    cambiandoPantalla("Pantalla estatus pedidos");
+    cambiandoPantalla("Welcome/estatusPedidos","contenidoSio");
 }
 
 recepcionPedidos.addEventListener('click',recepcionPedidosScreen);
 function recepcionPedidosScreen(){
-    cambiandoPantalla("Pantalla recepcion Pedidos");
+    cambiandoPantalla("Welcome/recepcionPedidos","contenidoSio");
 }
 
 proveedores.addEventListener('click',proveedoresScreen);
 function proveedoresScreen(){
-    cambiandoPantalla("Pantalla cambiando pantalla");
+    cambiandoPantalla("Welcome/proveedores","contenidoSio");
 }
 
 listadoPedidos.addEventListener('click',listadoPedidosScreen);
 function listadoPedidosScreen(){
-    cambiandoPantalla("Pantalla listado de pedidos");
+    cambiandoPantalla("Welcome/listadoPedidos","contenidoSio");
 }
 
 iventario.addEventListener('click',iventarioScreen);
