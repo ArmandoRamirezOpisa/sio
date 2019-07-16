@@ -76,5 +76,32 @@
     margin: 0 10px;
 }
 
+.contentAnimated {
+  -webkit-animation: showContent 5s ease-in-out;
+          animation: showContent 5s ease-in-out;
+}
 
+@-webkit-keyframes showContent {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes showContent {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 /*# sourceMappingURL=styles.css.map */

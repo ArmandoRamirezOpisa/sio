@@ -32,187 +32,218 @@ let correoLiverpool = document.getElementById('correoLiverpool');
 let salioSioWeb = document.getElementById('salioSioWeb');
 /* Fin Menu SioWeb */
 
-function cambiandoPantalla(pantalla,seccion){
-    if(pantalla == "Welcome"){
+function cambiandoPantalla(pantalla, seccion) {
+    if (pantalla == "Welcome") {
         window.location.reload();
-    }else{
+    } else {
         $.ajax({
-        url: pantalla,
-        async: 'true',
-        cache: false,
-        contentType: "application/x-www-form-urlencoded",
-        dataType: "html",
-        error: function(object, error, anotherObject) {
-            console.log('Mensaje: ' + object.statusText + 'Status: ' + object.status);
-        },
-        global: true,
-        ifModified: false,
-        processData: true,
-        success: function(result) {
-            if (result == "0") {
-                window.location.reload();
-            } else {
-                $('#' + seccion).html(result);
-            }
-        },
-        timeout: 30000,
-        type: "GET"
-    });
+            url: pantalla,
+            async: 'true',
+            cache: false,
+            contentType: "application/x-www-form-urlencoded",
+            dataType: "html",
+            error: function(object, error, anotherObject) {
+                console.log('Mensaje: ' + object.statusText + 'Status: ' + object.status);
+            },
+            global: true,
+            ifModified: false,
+            processData: true,
+            success: function(result) {
+                if (result == "0") {
+                    window.location.reload();
+                } else {
+                    $('#' + seccion).html(result);
+                }
+            },
+            timeout: 30000,
+            type: "GET"
+        });
     }
 }
 
 /* Acciones para el cambio de pantalla */
-homeSIO.addEventListener('click',homeSIOScreen);
-function homeSIOScreen(){
-    cambiandoPantalla("Welcome","contenidoSio");
+homeSIO.addEventListener('click', homeSIOScreen);
+
+function homeSIOScreen() {
+    cambiandoPantalla("Welcome", "contenidoSio");
 }
 
-busquedaCanje.addEventListener('click',busquedaCanjeScreen);
-function busquedaCanjeScreen(){
-    cambiandoPantalla("Welcome/busquedaCanje","contenidoSio")
+busquedaCanje.addEventListener('click', busquedaCanjeScreen);
+
+function busquedaCanjeScreen() {
+    cambiandoPantalla("Welcome/busquedaCanje", "contenidoSio")
 }
 
-confirmarTarjetasEntregadas.addEventListener('click',confirmarTarjetasEntregadasScreen);
-function confirmarTarjetasEntregadasScreen(){
-    cambiandoPantalla("Welcome/confirmarTarjetasEntregadas","contenidoSio");
+confirmarTarjetasEntregadas.addEventListener('click', confirmarTarjetasEntregadasScreen);
+
+function confirmarTarjetasEntregadasScreen() {
+    cambiandoPantalla("Welcome/confirmarTarjetasEntregadas", "contenidoSio");
 }
 
-depositoSaldo.addEventListener('click',depositoSaldoScreen);
-function depositoSaldoScreen(){
-    cambiandoPantalla("Welcome/depositoSaldo","contenidoSio");
+depositoSaldo.addEventListener('click', depositoSaldoScreen);
+
+function depositoSaldoScreen() {
+    cambiandoPantalla("Welcome/depositoSaldo", "contenidoSio");
 }
 
-envioActivacionesPendientes.addEventListener('click',envioActivacionesPendientesScreen);
-function envioActivacionesPendientesScreen(){
-    cambiandoPantalla("Welcome/envioActivacionesPendientes","contenidoSio");
+envioActivacionesPendientes.addEventListener('click', envioActivacionesPendientesScreen);
+
+function envioActivacionesPendientesScreen() {
+    cambiandoPantalla("Welcome/envioActivacionesPendientes", "contenidoSio");
 }
 
-depositoSaldoSolicitado.addEventListener('click',depositoSaldoSolicitadoScreen);
-function depositoSaldoSolicitadoScreen(){
-    cambiandoPantalla("Welcome/depositoSaldoSolicitado","contenidoSio");
+depositoSaldoSolicitado.addEventListener('click', depositoSaldoSolicitadoScreen);
+
+function depositoSaldoSolicitadoScreen() {
+    cambiandoPantalla("Welcome/depositoSaldoSolicitado", "contenidoSio");
 }
 
-saldoLiverpool.addEventListener('click',saldoLiverpoolScreen);
-function saldoLiverpoolScreen(){
-    cambiandoPantalla("Welcome/saldoLiverpool","contenidoSio");
+saldoLiverpool.addEventListener('click', saldoLiverpoolScreen);
+
+function saldoLiverpoolScreen() {
+    cambiandoPantalla("Welcome/saldoLiverpool", "contenidoSio");
 }
 
-pendientesXProgramar.addEventListener('click',pendientesXProgramarScreen);
-function pendientesXProgramarScreen(){
-    cambiandoPantalla("Welcome/pendientesXProgramar","contenidoSio");
+pendientesXProgramar.addEventListener('click', pendientesXProgramarScreen);
+
+function pendientesXProgramarScreen() {
+    cambiandoPantalla("Welcome/pendientesXProgramar", "contenidoSio");
 }
 
-notificacionCanjes.addEventListener('click',notificacionCanjesScreen);
-function notificacionCanjesScreen(){
-    cambiandoPantalla("Welcome/notificacionCanjes","contenidoSio");
+notificacionCanjes.addEventListener('click', notificacionCanjesScreen);
+
+function notificacionCanjesScreen() {
+    cambiandoPantalla("Welcome/notificacionCanjes", "contenidoSio");
 }
 
-generarPedidos.addEventListener('click',generarPedidosScreen);
-function generarPedidosScreen(){
-    cambiandoPantalla("Welcome/generarPedidos","contenidoSio");
+generarPedidos.addEventListener('click', generarPedidosScreen);
+
+function generarPedidosScreen() {
+    cambiandoPantalla("Welcome/generarPedidos", "contenidoSio");
 }
 
-estatusPedidos.addEventListener('click',estatusPedidosScreen);
-function estatusPedidosScreen(){
-    cambiandoPantalla("Welcome/estatusPedidos","contenidoSio");
+estatusPedidos.addEventListener('click', estatusPedidosScreen);
+
+function estatusPedidosScreen() {
+    cambiandoPantalla("Welcome/estatusPedidos", "contenidoSio");
 }
 
-recepcionPedidos.addEventListener('click',recepcionPedidosScreen);
-function recepcionPedidosScreen(){
-    cambiandoPantalla("Welcome/recepcionPedidos","contenidoSio");
+recepcionPedidos.addEventListener('click', recepcionPedidosScreen);
+
+function recepcionPedidosScreen() {
+    cambiandoPantalla("Welcome/recepcionPedidos", "contenidoSio");
 }
 
-proveedores.addEventListener('click',proveedoresScreen);
-function proveedoresScreen(){
-    cambiandoPantalla("Welcome/proveedores","contenidoSio");
+proveedores.addEventListener('click', proveedoresScreen);
+
+function proveedoresScreen() {
+    cambiandoPantalla("Welcome/proveedores", "contenidoSio");
 }
 
-listadoPedidos.addEventListener('click',listadoPedidosScreen);
-function listadoPedidosScreen(){
-    cambiandoPantalla("Welcome/listadoPedidos","contenidoSio");
+listadoPedidos.addEventListener('click', listadoPedidosScreen);
+
+function listadoPedidosScreen() {
+    cambiandoPantalla("Welcome/listadoPedidos", "contenidoSio");
 }
 
-iventario.addEventListener('click',iventarioScreen);
-function iventarioScreen(){
-    cambiandoPantalla("Welcome/iventario","contenidoSio");
+iventario.addEventListener('click', iventarioScreen);
+
+function iventarioScreen() {
+    cambiandoPantalla("Welcome/iventario", "contenidoSio");
 }
 
-comprasConsolidadas.addEventListener('click',comprasConsolidadasScreen);
-function comprasConsolidadasScreen(){
-    cambiandoPantalla("Welcome/comprasConsolidadas","contenidoSio");
+comprasConsolidadas.addEventListener('click', comprasConsolidadasScreen);
+
+function comprasConsolidadasScreen() {
+    cambiandoPantalla("Welcome/comprasConsolidadas", "contenidoSio");
 }
 
-transferenciaPremios.addEventListener('click',transferenciaPremiosScreen);
-function transferenciaPremiosScreen(){
-    cambiandoPantalla("Welcome/transferenciaPremios","contenidoSio");
+transferenciaPremios.addEventListener('click', transferenciaPremiosScreen);
+
+function transferenciaPremiosScreen() {
+    cambiandoPantalla("Welcome/transferenciaPremios", "contenidoSio");
 }
 
-entradasSalidasDiversas.addEventListener('click',entradasSalidasDiversasScreen);
-function entradasSalidasDiversasScreen(){
-    cambiandoPantalla("Welcome/entradasSalidasDiversas","contenidoSio");
+entradasSalidasDiversas.addEventListener('click', entradasSalidasDiversasScreen);
+
+function entradasSalidasDiversasScreen() {
+    cambiandoPantalla("Welcome/entradasSalidasDiversas", "contenidoSio");
 }
 
-inventarioFisico.addEventListener('click',inventarioFisicoScreen);
-function inventarioFisicoScreen(){
-    cambiandoPantalla("Welcome/inventarioFisico","contenidoSio");
+inventarioFisico.addEventListener('click', inventarioFisicoScreen);
+
+function inventarioFisicoScreen() {
+    cambiandoPantalla("Welcome/inventarioFisico", "contenidoSio");
 }
 
-etiquetas.addEventListener('click',etiquetasScreen);
-function etiquetasScreen(){
-    cambiandoPantalla("Welcome/etiquetas","contenidoSio");
+etiquetas.addEventListener('click', etiquetasScreen);
+
+function etiquetasScreen() {
+    cambiandoPantalla("Welcome/etiquetas", "contenidoSio");
 }
 
-monitor.addEventListener('click',monitorScreen);
-function monitorScreen(){
-    cambiandoPantalla("Pantalla monitor");
+monitor.addEventListener('click', monitorScreen);
+
+function monitorScreen() {
+    cambiandoPantalla("Welcome/monitor", "contenidoSio");
 }
 
-seguimiento.addEventListener('click',seguimientoScreen);
-function seguimientoScreen(){
-    cambiandoPantalla("Pantalla seguimientos");
+seguimiento.addEventListener('click', seguimientoScreen);
+
+function seguimientoScreen() {
+    cambiandoPantalla("Welcome/seguimiento", "contenidoSio");
 }
 
-pruebasEntrega.addEventListener('click',pruebasEntregaScreen);
-function pruebasEntregaScreen(){
-    cambiandoPantalla("Pantalla pruebas entrega");
+pruebasEntrega.addEventListener('click', pruebasEntregaScreen);
+
+function pruebasEntregaScreen() {
+    cambiandoPantalla("Welcome/pruebasEntrega", "contenidoSio");
 }
 
-premios.addEventListener('click',premiosScreen);
-function premiosScreen(){
-    cambiandoPantalla("Pantalla premios");
+premios.addEventListener('click', premiosScreen);
+
+function premiosScreen() {
+    cambiandoPantalla("Welcome/premios", "contenidoSio");
 }
 
-visualizarCanjesFacturar.addEventListener('click',visualizarCanjesFacturarScreen);
-function visualizarCanjesFacturarScreen(){
-    cambiandoPantalla("Pantalla visualizar canjes");
+visualizarCanjesFacturar.addEventListener('click', visualizarCanjesFacturarScreen);
+
+function visualizarCanjesFacturarScreen() {
+    cambiandoPantalla("Welcome/visualizarCanjesFacturar", "contenidoSio");
 }
 
-facturacion.addEventListener('click',facturacionScreen);
-function facturacionScreen(){
-    cambiandoPantalla("Pantalla facturacion");
+facturacion.addEventListener('click', facturacionScreen);
+
+function facturacionScreen() {
+    cambiandoPantalla("Welcome/facturacion", "contenidoSio");
 }
 
-sincronizarPremios.addEventListener('click',sincronizarPremiosScreen);
-function sincronizarPremiosScreen(){
-    cambiandoPantalla("Pantalla sincronuizar premios");
+sincronizarPremios.addEventListener('click', sincronizarPremiosScreen);
+
+function sincronizarPremiosScreen() {
+    cambiandoPantalla("Welcome/sincronizarPremios", "contenidoSio");
 }
 
-participantes.addEventListener('click',participantesScreen);
-function participantesScreen(){
-    cambiandoPantalla("Pantalla participantes");
+participantes.addEventListener('click', participantesScreen);
+
+function participantesScreen() {
+    cambiandoPantalla("Welcome/participantes", "contenidoSio");
 }
 
-tickets.addEventListener('click',ticketsScreen);
-function ticketsScreen(){
-    cambiandoPantalla("Pantalla tickets");
+tickets.addEventListener('click', ticketsScreen);
+
+function ticketsScreen() {
+    cambiandoPantalla("Welcome/tickets", "contenidoSio");
 }
 
-correoLiverpool.addEventListener('click',correoLiverpoolScreen);
-function correoLiverpoolScreen(){
-    cambiandoPantalla("Pantalla correo");
+correoLiverpool.addEventListener('click', correoLiverpoolScreen);
+
+function correoLiverpoolScreen() {
+    cambiandoPantalla("Welcome/correoLiverpool", "contenidoSio");
 }
 
-salioSioWeb.addEventListener('click',salioSioWebScrren);
-function salioSioWebScrren(){
-    cambiandoPantalla("Pantalla salioSioWeb");
+salioSioWeb.addEventListener('click', salioSioWebScrren);
+
+function salioSioWebScrren() {
+    console.log("salio sio web");
 }

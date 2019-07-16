@@ -96,4 +96,46 @@ class Welcome extends CI_Controller {
 	public function etiquetas(){
 		$this->load->view('etiquetas_view');
 	}
+
+	public function monitor(){
+		$this->load->view('monitor_view');
+		$this->load->view('modales/modalMonitor');
+	}
+
+	public function seguimiento(){
+		$this->load->view('seguimiento_view');
+	}
+
+	public function pruebasEntrega(){
+		$this->load->view('pruebasEntrega_view');
+	}
+
+	public function premios(){
+		$this->load->view('premios_view');
+	}
+
+	public function visualizarCanjesFacturar(){
+		$this->load->view('visualizarCanjesFacturar_view');
+		$this->load->view('modales/modalVisualCanjeFac');
+	}
+
+	public function facturacion(){
+		$this->load->view('facturacion_view');
+	}
+
+	public function sincronizarPremios(){
+		$this->load->view('sincronizarPremios_view');
+	}
+
+	public function participantes(){
+		$this->load->view('participantes_view');
+	}
+
+	public function tickets(){
+		$this->load->view('tickets_view');
+	}
+
+	public function correoLiverpool(){
+		$this->load->view('correoLiverpool_view');
+	}
 }
