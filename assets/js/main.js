@@ -245,5 +245,5 @@ function correoLiverpoolScreen() {
 salioSioWeb.addEventListener('click', salioSioWebScrren);
 
 function salioSioWebScrren() {
-    location.href = "http://" + location.hostname + "/opisio.com.mx/";
+    location.href = "http://" + location.hostname + "/opisio.com.mx/Welcome/salirSio";
 }

@@ -3,14 +3,39 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Welcome extends CI_Controller {
 
-	public function index()
-	{
+	public function __construct() {
+		parent:: __construct();
+		$this->load->library('email');
+		$this->load->library('session');
+		$this->load->model('Sio_model');
+
+	}
+
+	public function index(){
 		$this->load->view('home_login_view');
 	}
 
+	public function loginSio(){
+		$loginUserDataSio = array(
+			"userSio"=>$this->input->post('userSio'),
+			"passwordSio"=>$this->input->post('passwordSio')
+		);
+		$loginSio['result'] = $this->Sio_model->loginSIO($loginUserDataSio);
+		if ($loginSio['result'][0]){
+			$userData = array(
+				'logged_in'      => TRUE,
+				'idUsuario'      => $loginSio['result'][0]->idUsuario,
+				'nombreUsuario'  	  => $loginSio['result'][0]->nombreUsuario,
+				'pwd'	  => $loginSio['result'][0]->pwd
+			);
+			$this->session->set_userdata($userData);
+			$this->output->set_output(json_encode($loginSio['result'][0]));
+		}else{
+			$this->output->set_output(json_encode(0));
+		}
+	}
 
-	public function home()
-	{
+	public function home(){
 		$this->load->view('includes/home_view_header');
 		$this->load->view('home_view');
 		$this->load->view('includes/home_view_footer');
@@ -143,5 +168,11 @@ class Welcome extends CI_Controller {
 
 	public function correoLiverpool(){
 		$this->load->view('correoLiverpool_view');
+	}
+
+	public function salirSio(){
+		$userData = array('logged_in','idUsuario','nombreUsuario','pwd');
+		$this->session->unset_userdata($userData);
+		redirect('Welcome');
 	}
 }
