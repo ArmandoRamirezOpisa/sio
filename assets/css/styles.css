@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+#messageAlert {
+    display: none;
+}
+
 .navbar-dark .navbar-nav .nav-link {
     color: #fff !important;
 }
@@ -77,31 +81,33 @@
 }
 
 .contentAnimated {
-  -webkit-animation: showContent 5s ease-in-out;
-          animation: showContent 5s ease-in-out;
+    -webkit-animation: showContent 5s ease-in-out;
+    animation: showContent 5s ease-in-out;
 }
 
 @-webkit-keyframes showContent {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-  }
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 @keyframes showContent {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-  }
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
 }
+
+
 /*# sourceMappingURL=styles.css.map */

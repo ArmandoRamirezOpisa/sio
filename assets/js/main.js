@@ -65,185 +65,185 @@ function cambiandoPantalla(pantalla, seccion) {
 homeSIO.addEventListener('click', homeSIOScreen);
 
 function homeSIOScreen() {
-    cambiandoPantalla("Welcome", "contenidoSio");
+    window.location.reload();
 }
 
 busquedaCanje.addEventListener('click', busquedaCanjeScreen);
 
 function busquedaCanjeScreen() {
-    cambiandoPantalla("Welcome/busquedaCanje", "contenidoSio")
+    cambiandoPantalla("busquedaCanje", "contenidoSio");
 }
 
 confirmarTarjetasEntregadas.addEventListener('click', confirmarTarjetasEntregadasScreen);
 
 function confirmarTarjetasEntregadasScreen() {
-    cambiandoPantalla("Welcome/confirmarTarjetasEntregadas", "contenidoSio");
+    cambiandoPantalla("confirmarTarjetasEntregadas", "contenidoSio");
 }
 
 depositoSaldo.addEventListener('click', depositoSaldoScreen);
 
 function depositoSaldoScreen() {
-    cambiandoPantalla("Welcome/depositoSaldo", "contenidoSio");
+    cambiandoPantalla("depositoSaldo", "contenidoSio");
 }
 
 envioActivacionesPendientes.addEventListener('click', envioActivacionesPendientesScreen);
 
 function envioActivacionesPendientesScreen() {
-    cambiandoPantalla("Welcome/envioActivacionesPendientes", "contenidoSio");
+    cambiandoPantalla("envioActivacionesPendientes", "contenidoSio");
 }
 
 depositoSaldoSolicitado.addEventListener('click', depositoSaldoSolicitadoScreen);
 
 function depositoSaldoSolicitadoScreen() {
-    cambiandoPantalla("Welcome/depositoSaldoSolicitado", "contenidoSio");
+    cambiandoPantalla("depositoSaldoSolicitado", "contenidoSio");
 }
 
 saldoLiverpool.addEventListener('click', saldoLiverpoolScreen);
 
 function saldoLiverpoolScreen() {
-    cambiandoPantalla("Welcome/saldoLiverpool", "contenidoSio");
+    cambiandoPantalla("saldoLiverpool", "contenidoSio");
 }
 
 pendientesXProgramar.addEventListener('click', pendientesXProgramarScreen);
 
 function pendientesXProgramarScreen() {
-    cambiandoPantalla("Welcome/pendientesXProgramar", "contenidoSio");
+    cambiandoPantalla("pendientesXProgramar", "contenidoSio");
 }
 
 notificacionCanjes.addEventListener('click', notificacionCanjesScreen);
 
 function notificacionCanjesScreen() {
-    cambiandoPantalla("Welcome/notificacionCanjes", "contenidoSio");
+    cambiandoPantalla("notificacionCanjes", "contenidoSio");
 }
 
 generarPedidos.addEventListener('click', generarPedidosScreen);
 
 function generarPedidosScreen() {
-    cambiandoPantalla("Welcome/generarPedidos", "contenidoSio");
+    cambiandoPantalla("generarPedidos", "contenidoSio");
 }
 
 estatusPedidos.addEventListener('click', estatusPedidosScreen);
 
 function estatusPedidosScreen() {
-    cambiandoPantalla("Welcome/estatusPedidos", "contenidoSio");
+    cambiandoPantalla("estatusPedidos", "contenidoSio");
 }
 
 recepcionPedidos.addEventListener('click', recepcionPedidosScreen);
 
 function recepcionPedidosScreen() {
-    cambiandoPantalla("Welcome/recepcionPedidos", "contenidoSio");
+    cambiandoPantalla("recepcionPedidos", "contenidoSio");
 }
 
 proveedores.addEventListener('click', proveedoresScreen);
 
 function proveedoresScreen() {
-    cambiandoPantalla("Welcome/proveedores", "contenidoSio");
+    cambiandoPantalla("proveedores", "contenidoSio");
 }
 
 listadoPedidos.addEventListener('click', listadoPedidosScreen);
 
 function listadoPedidosScreen() {
-    cambiandoPantalla("Welcome/listadoPedidos", "contenidoSio");
+    cambiandoPantalla("listadoPedidos", "contenidoSio");
 }
 
 iventario.addEventListener('click', iventarioScreen);
 
 function iventarioScreen() {
-    cambiandoPantalla("Welcome/iventario", "contenidoSio");
+    cambiandoPantalla("iventario", "contenidoSio");
 }
 
 comprasConsolidadas.addEventListener('click', comprasConsolidadasScreen);
 
 function comprasConsolidadasScreen() {
-    cambiandoPantalla("Welcome/comprasConsolidadas", "contenidoSio");
+    cambiandoPantalla("comprasConsolidadas", "contenidoSio");
 }
 
 transferenciaPremios.addEventListener('click', transferenciaPremiosScreen);
 
 function transferenciaPremiosScreen() {
-    cambiandoPantalla("Welcome/transferenciaPremios", "contenidoSio");
+    cambiandoPantalla("transferenciaPremios", "contenidoSio");
 }
 
 entradasSalidasDiversas.addEventListener('click', entradasSalidasDiversasScreen);
 
 function entradasSalidasDiversasScreen() {
-    cambiandoPantalla("Welcome/entradasSalidasDiversas", "contenidoSio");
+    cambiandoPantalla("entradasSalidasDiversas", "contenidoSio");
 }
 
 inventarioFisico.addEventListener('click', inventarioFisicoScreen);
 
 function inventarioFisicoScreen() {
-    cambiandoPantalla("Welcome/inventarioFisico", "contenidoSio");
+    cambiandoPantalla("inventarioFisico", "contenidoSio");
 }
 
 etiquetas.addEventListener('click', etiquetasScreen);
 
 function etiquetasScreen() {
-    cambiandoPantalla("Welcome/etiquetas", "contenidoSio");
+    cambiandoPantalla("etiquetas", "contenidoSio");
 }
 
 monitor.addEventListener('click', monitorScreen);
 
 function monitorScreen() {
-    cambiandoPantalla("Welcome/monitor", "contenidoSio");
+    cambiandoPantalla("monitor", "contenidoSio");
 }
 
 seguimiento.addEventListener('click', seguimientoScreen);
 
 function seguimientoScreen() {
-    cambiandoPantalla("Welcome/seguimiento", "contenidoSio");
+    cambiandoPantalla("seguimiento", "contenidoSio");
 }
 
 pruebasEntrega.addEventListener('click', pruebasEntregaScreen);
 
 function pruebasEntregaScreen() {
-    cambiandoPantalla("Welcome/pruebasEntrega", "contenidoSio");
+    cambiandoPantalla("pruebasEntrega", "contenidoSio");
 }
 
 premios.addEventListener('click', premiosScreen);
 
 function premiosScreen() {
-    cambiandoPantalla("Welcome/premios", "contenidoSio");
+    cambiandoPantalla("premios", "contenidoSio");
 }
 
 visualizarCanjesFacturar.addEventListener('click', visualizarCanjesFacturarScreen);
 
 function visualizarCanjesFacturarScreen() {
-    cambiandoPantalla("Welcome/visualizarCanjesFacturar", "contenidoSio");
+    cambiandoPantalla("visualizarCanjesFacturar", "contenidoSio");
 }
 
 facturacion.addEventListener('click', facturacionScreen);
 
 function facturacionScreen() {
-    cambiandoPantalla("Welcome/facturacion", "contenidoSio");
+    cambiandoPantalla("facturacion", "contenidoSio");
 }
 
 sincronizarPremios.addEventListener('click', sincronizarPremiosScreen);
 
 function sincronizarPremiosScreen() {
-    cambiandoPantalla("Welcome/sincronizarPremios", "contenidoSio");
+    cambiandoPantalla("sincronizarPremios", "contenidoSio");
 }
 
 participantes.addEventListener('click', participantesScreen);
 
 function participantesScreen() {
-    cambiandoPantalla("Welcome/participantes", "contenidoSio");
+    cambiandoPantalla("participantes", "contenidoSio");
 }
 
 tickets.addEventListener('click', ticketsScreen);
 
 function ticketsScreen() {
-    cambiandoPantalla("Welcome/tickets", "contenidoSio");
+    cambiandoPantalla("tickets", "contenidoSio");
 }
 
 correoLiverpool.addEventListener('click', correoLiverpoolScreen);
 
 function correoLiverpoolScreen() {
-    cambiandoPantalla("Welcome/correoLiverpool", "contenidoSio");
+    cambiandoPantalla("correoLiverpool", "contenidoSio");
 }
 
 salioSioWeb.addEventListener('click', salioSioWebScrren);
 
 function salioSioWebScrren() {
-    console.log("salio sio web");
+    location.href = "http://" + location.hostname + "/opisio.com.mx/";
 }

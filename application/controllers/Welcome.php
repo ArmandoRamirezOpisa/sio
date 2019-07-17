@@ -5,6 +5,12 @@ class Welcome extends CI_Controller {
 
 	public function index()
 	{
+		$this->load->view('home_login_view');
+	}
+
+
+	public function home()
+	{
 		$this->load->view('includes/home_view_header');
 		$this->load->view('home_view');
 		$this->load->view('includes/home_view_footer');
