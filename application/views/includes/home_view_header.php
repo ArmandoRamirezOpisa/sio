@@ -111,9 +111,10 @@
             <form class="form-inline my-2 my-lg-0">
                 <div class="dropdown">
                     <button class="btn btn-outline-secondary my-2 my-sm-0 dropdown-toggle" type="button" id="userSession" data-toggle="dropdown"> 
-                            <i class="fas fa-user"></i> <?php echo $this->session->userdata('nombreUsuario'); ?>
+                            <i class="fas fa-user"></i> <?php echo $this->session->userdata('usuario'); ?>
                         </button>
                     <div class="dropdown-menu" aria-labelledby="userSession">
+                        <a id="configUserSio" class="dropdown-item" href="#"><i class="fa fa-cog"></i> Configuracion</a>
                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modalCerrarSesion">Cerrar Sesion</a>
                     </div>
                 </div>

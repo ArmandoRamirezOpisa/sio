@@ -9,7 +9,7 @@ class Sio_model extends CI_Model {
     function loginSIO($loginUserDataSio) {
 
         $resultado = "
-            SELECT idUsuario,nombreUsuario,pwd 
+            SELECT idUsuario,nombreUsuario,pwd,usuario
             FROM Usuarios_SIO 
             WHERE nombreUsuario = '".$loginUserDataSio['userSio']."'
             and pwd = '".$loginUserDataSio['passwordSio']."'
@@ -17,6 +17,32 @@ class Sio_model extends CI_Model {
 
         $query = $this->db->query($resultado);
         return $query->result();
+    }
+
+    function updateNameUser($nameUserDataSio){
+        $query = $this->db->query("
+            UPDATE `Usuarios_SIO` 
+            SET `usuario`='".$nameUserDataSio['newUserSio']."'
+            WHERE idUsuario = ".$this->session->userdata('idUsuario')
+        );
+        if ($query){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    function updatePwd($pwsDataSio){
+        $query = $this->db->query("
+            UPDATE `Usuarios_SIO` 
+            SET `pwd`='".$pwsDataSio['newPassword']."'
+            WHERE idUsuario = ".$this->session->userdata('idUsuario')
+        );
+        if ($query){
+            return true;
+        }else{
+            return false;
+        }
     }
     
 }

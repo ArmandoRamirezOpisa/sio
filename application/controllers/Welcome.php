@@ -26,7 +26,8 @@ class Welcome extends CI_Controller {
 				'logged_in'      => TRUE,
 				'idUsuario'      => $loginSio['result'][0]->idUsuario,
 				'nombreUsuario'  	  => $loginSio['result'][0]->nombreUsuario,
-				'pwd'	  => $loginSio['result'][0]->pwd
+				'pwd'	  => $loginSio['result'][0]->pwd,
+				'usuario'	  => $loginSio['result'][0]->usuario
 			);
 			$this->session->set_userdata($userData);
 			$this->output->set_output(json_encode($loginSio['result'][0]));
@@ -36,9 +37,14 @@ class Welcome extends CI_Controller {
 	}
 
 	public function home(){
-		$this->load->view('includes/home_view_header');
-		$this->load->view('home_view');
-		$this->load->view('includes/home_view_footer');
+
+		if($this->session->userdata('nombreUsuario')){
+			$this->load->view('includes/home_view_header');
+			$this->load->view('home_view');
+			$this->load->view('includes/home_view_footer');
+		}else{
+			redirect("Welcome");
+		}
 	}
 
 	public function busquedaCanje(){
@@ -168,6 +174,36 @@ class Welcome extends CI_Controller {
 
 	public function correoLiverpool(){
 		$this->load->view('correoLiverpool_view');
+	}
+
+	public function configUserSio(){
+		$this->load->view('configUserSio_view');
+	}
+
+	public function updateUserNameSio(){
+		$nameUserDataSio = array(
+			"newUserSio"=>$this->input->post('newUserSio')
+		);
+		$userUpdated = $this->Sio_model->updateNameUser($nameUserDataSio);
+		if($userUpdated){
+			$this->session->set_userdata('usuario', $nameUserDataSio['newUserSio']);
+			$this->output->set_output(json_encode($nameUserDataSio));
+		}else{
+			$this->output->set_output(json_encode(0));
+		}
+	}
+
+	public function updatePasswordSio(){
+		$pwsDataSio = array(
+			"newPassword"=>$this->input->post('newPassword')
+		);
+		$pwdUpdated = $this->Sio_model->updatePwd($pwsDataSio);
+		if($pwdUpdated){
+			$this->session->set_userdata('pwd', $pwsDataSio['newPassword']);
+			$this->output->set_output(json_encode($pwsDataSio));
+		}else{
+			$this->output->set_output(json_encode(0));
+		}
 	}
 
 	public function salirSio(){

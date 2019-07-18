@@ -29,6 +29,7 @@ let sincronizarPremios = document.getElementById('sincronizarPremios');
 let participantes = document.getElementById('participantes');
 let tickets = document.getElementById('tickets');
 let correoLiverpool = document.getElementById('correoLiverpool');
+let configUserSio = document.getElementById('configUserSio');
 let salioSioWeb = document.getElementById('salioSioWeb');
 /* Fin Menu SioWeb */
 
@@ -240,6 +241,82 @@ correoLiverpool.addEventListener('click', correoLiverpoolScreen);
 
 function correoLiverpoolScreen() {
     cambiandoPantalla("correoLiverpool", "contenidoSio");
+}
+
+configUserSio.addEventListener('click',configUserSioScreen);
+
+function configUserSioScreen() {
+    cambiandoPantalla("configUserSio","contenidoSio");
+}
+
+function cambiarUserNameSio() {
+    let messageAlertConfig = document.getElementById('messageAlertConfig');
+    let newNameUserSio = document.getElementById('newNameUserSio');
+    if(newNameUserSio.value == ""){
+        messageAlertConfig.style.display = 'block';
+    }else{
+        $.ajax({
+            url: 'updateUserNameSio',
+            async: 'true',
+            cache: false,
+            contentType: "application/x-www-form-urlencoded",
+            global: true,
+            ifModified: false,
+            processData: true,
+            data: {
+                'newUserSio': newNameUserSio.value
+            },
+            beforeSend: function() {},
+            success: function(result) {
+                if (result) {
+                    window.location.reload();
+                } else {
+                    messageAlertConfig.style.display = 'block'
+                }
+            },
+            error: function(object, error, anotherObject) {},
+            timeout: 30000,
+            type: "POST"
+        });
+    }
+}
+
+function cambiarPassword(){
+    let messageAlertConfig = document.getElementById('messageAlertConfig');
+    let newPassword = document.getElementById('newPassword');
+    let newPwd = newPassword.value;
+    let newPasswordConfirm = document.getElementById('newPasswordConfirm');
+    if(newPassword.value == "" || newPasswordConfirm.value == ""){
+        messageAlertConfig.style.display = 'block'
+    }else if(newPassword.value =! newPasswordConfirm.value){
+        messageAlertConfig.style.display = 'block'
+    }else if(newPassword.value.length < 8 && newPasswordConfirm.value.length < 8){
+        messageAlertConfig.style.display = 'block'
+    }else{
+        $.ajax({
+            url: 'updatePasswordSio',
+            async: 'true',
+            cache: false,
+            contentType: "application/x-www-form-urlencoded",
+            global: true,
+            ifModified: false,
+            processData: true,
+            data: {
+                'newPassword': newPwd
+            },
+            beforeSend: function() {},
+            success: function(result) {
+                if (result) {
+                    window.location.reload();
+                } else {
+                    messageAlertConfig.style.display = 'block'
+                }
+            },
+            error: function(object, error, anotherObject) {},
+            timeout: 30000,
+            type: "POST"
+        });
+    }
 }
 
 salioSioWeb.addEventListener('click', salioSioWebScrren);
