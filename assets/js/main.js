@@ -43,9 +43,7 @@ function cambiandoPantalla(pantalla, seccion) {
             cache: false,
             contentType: "application/x-www-form-urlencoded",
             dataType: "html",
-            error: function(object, error, anotherObject) {
-                console.log('Mensaje: ' + object.statusText + 'Status: ' + object.status);
-            },
+            error: function(object, error, anotherObject) {},
             global: true,
             ifModified: false,
             processData: true,
@@ -73,6 +71,76 @@ busquedaCanje.addEventListener('click', busquedaCanjeScreen);
 
 function busquedaCanjeScreen() {
     cambiandoPantalla("busquedaCanje", "contenidoSio");
+}
+
+function buscandoCanjeData() {
+    const alertMessage = document.getElementById('alertMessage');
+    const modoBusquedaCanje = document.getElementById('modoBusquedaCanje');
+    const busquedaCanjeText = document.getElementById('busquedaCanjeText');
+
+    if (busquedaCanjeText.value) {
+        buscandoInfoCanjeData(modoBusquedaCanje.value, busquedaCanjeText.value);
+    } else {
+        alertMessage.style.display = "block";
+        alertMessage.innerHTML = '<div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>Advertencia!</strong> El campo se encuentra vacio, debes escribir algo para que la busqueda se realize correctamente.<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
+    }
+}
+
+function buscandoInfoCanjeData(busquedaModo, textoBuscar) {
+    switch (busquedaModo) {
+        case 'vacio':
+            alertMessage.style.display = "block";
+            alertMessage.innerHTML = '<div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>Advertencia!</strong> Debes de buscar algo de la lista.<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
+            break;
+        case 'folio':
+            sendData('buscandoCanje', 'folio', textoBuscar);
+            break;
+        case 'nombreParticipante':
+            sendData('buscandoCanje', 'nombreParticipante', textoBuscar);
+            break;
+        case 'po':
+            sendData('buscandoCanje', 'po', textoBuscar);
+            break;
+        case 'cp':
+            sendData('buscandoCanje', 'cp', textoBuscar);
+            break;
+        case 'guia':
+            sendData('buscandoCanje', 'guia', textoBuscar);
+            break;
+        case 'company':
+            sendData('buscandoCanje', 'company', textoBuscar);
+            break;
+    }
+}
+
+function sendData(url, opcion, info) {
+    $.ajax({
+        url: url,
+        async: 'true',
+        cache: false,
+        contentType: "application/x-www-form-urlencoded",
+        global: true,
+        ifModified: false,
+        processData: true,
+        data: {
+            opcion: opcion,
+            info: info
+        },
+        beforeSend: function() {},
+        success: function(result) {
+            if (result) {
+                console.log(result);
+                alertMessage.style.display = "block";
+                alertMessage.innerHTML = '<div class="alert alert-success alert-dismissible fade show" role="alert"><strong>Exito!</strong> Busqueda realizada con exito.<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
+            } else {
+                alertMessage.style.display = "block";
+                alertMessage.innerHTML = '<div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>Error!</strong> Error al realizar la busqueda.<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
+            }
+        },
+        error: function(object, error, anotherObject) {},
+        timeout: 30000,
+        type: "POST"
+    });
 }
 
 confirmarTarjetasEntregadas.addEventListener('click', confirmarTarjetasEntregadasScreen);
@@ -243,18 +311,18 @@ function correoLiverpoolScreen() {
     cambiandoPantalla("correoLiverpool", "contenidoSio");
 }
 
-configUserSio.addEventListener('click',configUserSioScreen);
+configUserSio.addEventListener('click', configUserSioScreen);
 
 function configUserSioScreen() {
-    cambiandoPantalla("configUserSio","contenidoSio");
+    cambiandoPantalla("configUserSio", "contenidoSio");
 }
 
 function cambiarUserNameSio() {
     let messageAlertConfig = document.getElementById('messageAlertConfig');
     let newNameUserSio = document.getElementById('newNameUserSio');
-    if(newNameUserSio.value == ""){
+    if (newNameUserSio.value == "") {
         messageAlertConfig.style.display = 'block';
-    }else{
+    } else {
         $.ajax({
             url: 'updateUserNameSio',
             async: 'true',
@@ -281,18 +349,18 @@ function cambiarUserNameSio() {
     }
 }
 
-function cambiarPassword(){
+function cambiarPassword() {
     let messageAlertConfig = document.getElementById('messageAlertConfig');
     let newPassword = document.getElementById('newPassword');
     let newPwd = newPassword.value;
     let newPasswordConfirm = document.getElementById('newPasswordConfirm');
-    if(newPassword.value == "" || newPasswordConfirm.value == ""){
+    if (newPassword.value == "" || newPasswordConfirm.value == "") {
         messageAlertConfig.style.display = 'block'
-    }else if(newPassword.value =! newPasswordConfirm.value){
+    } else if (newPassword.value = !newPasswordConfirm.value) {
         messageAlertConfig.style.display = 'block'
-    }else if(newPassword.value.length < 8 && newPasswordConfirm.value.length < 8){
+    } else if (newPassword.value.length < 8 && newPasswordConfirm.value.length < 8) {
         messageAlertConfig.style.display = 'block'
-    }else{
+    } else {
         $.ajax({
             url: 'updatePasswordSio',
             async: 'true',

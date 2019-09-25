@@ -19,6 +19,14 @@ class Sio_model extends CI_Model {
         return $query->result();
     }
 
+    function dataFolioCanje($info){
+        $result = "
+            SELECT * FROM `Canje` WHERE `folioCanje` =  ".$info." 
+        ";
+        $query = $this->db->query($result);
+        return $query->result();
+    }
+
     function updateNameUser($nameUserDataSio){
         $query = $this->db->query("
             UPDATE `Usuarios_SIO` 

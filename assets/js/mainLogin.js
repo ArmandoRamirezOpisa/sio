@@ -7,10 +7,6 @@ let messageAlert = document.getElementById('messageAlert');
 accederSio.addEventListener('click', accederSioHome);
 
 function accederSioHome() {
-
-    console.log("Probando usuario");
-    console.log(usuarioSio.value);
-
     if (usuarioSio.value == "" || passwordSio.value == "") {
         messageAlert.style.display = 'block';
     } else {

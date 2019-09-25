@@ -23,11 +23,11 @@ class Welcome extends CI_Controller {
 		$loginSio['result'] = $this->Sio_model->loginSIO($loginUserDataSio);
 		if ($loginSio['result'][0]){
 			$userData = array(
-				'logged_in'      => TRUE,
-				'idUsuario'      => $loginSio['result'][0]->idUsuario,
-				'nombreUsuario'  	  => $loginSio['result'][0]->nombreUsuario,
-				'pwd'	  => $loginSio['result'][0]->pwd,
-				'usuario'	  => $loginSio['result'][0]->usuario
+				'logged_in' => TRUE,
+				'idUsuario' => $loginSio['result'][0]->idUsuario,
+				'nombreUsuario' => $loginSio['result'][0]->nombreUsuario,
+				'pwd' => $loginSio['result'][0]->pwd,
+				'usuario' => $loginSio['result'][0]->usuario
 			);
 			$this->session->set_userdata($userData);
 			$this->output->set_output(json_encode($loginSio['result'][0]));
@@ -50,6 +50,36 @@ class Welcome extends CI_Controller {
 	public function busquedaCanje(){
 		$this->load->view('busquedaCanje_view');
 		$this->load->view('modales/modalBuscarCanje');
+	}
+
+	public function buscandoCanje(){
+		$opcion = $this->input->post('opcion');
+		$info = $this->input->post('info');
+		switch ($opcion) {
+			case "folio":
+				$dataCanje = $this->Sio_model->dataFolioCanje($info);
+				if($dataCanje){
+					$this->output->set_output(json_encode($dataCanje));
+				}else{
+					$this->output->set_output(json_encode(0));
+				}
+				break;
+			case "nombreParticipante":
+				echo "Your favorite color is blue!";
+				break;
+			case "po":
+				echo "Your favorite color is green!";
+				break;
+			case "cp":
+				echo "asdasd";
+				break;
+			case "guia":
+				echo "asdasd";
+				break;
+			case "company":
+				echo "company";
+				break;
+		}
 	}
 
 	public function confirmarTarjetasEntregadas(){
