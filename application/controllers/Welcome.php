@@ -57,9 +57,12 @@ class Welcome extends CI_Controller {
 		$info = $this->input->post('info');
 		switch ($opcion) {
 			case "folio":
-				$dataCanje = $this->Sio_model->dataFolioCanje($info);
+				$dataCanje = $this->Sio_model->codPremioCanje($info);
 				if($dataCanje){
-					$this->output->set_output(json_encode($dataCanje));
+					//$dataPedidoDetalle = $this->Sio_model->cantidadPedidoDetalle($dataCanje[0]['premio']);
+					//if($dataPedidoDetalle){
+						$this->output->set_output(json_encode($dataCanje[0]['premio']));
+					//}
 				}else{
 					$this->output->set_output(json_encode(0));
 				}

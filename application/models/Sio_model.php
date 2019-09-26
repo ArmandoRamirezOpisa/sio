@@ -19,9 +19,28 @@ class Sio_model extends CI_Model {
         return $query->result();
     }
 
-    function dataFolioCanje($info){
+    function codPremioCanje($info){
         $result = "
-            SELECT * FROM `Canje` WHERE `folioCanje` =  ".$info." 
+            select cd.codPremio as premio
+            from Canje as c join CanjeDetalle as cd on c.codPrograma = cd.codPrograma 
+            and c.folioCanje = cd.folioCanje 
+            left join Participante as p on p.idParticipante = c.idParticipante
+            left join Premio as pr on pr.codPremio = cd.codPremio
+            left join Empresa as e on e.codPrograma = p.codPrograma
+            and e.codEmpresa = p.codEmpresa
+            left join Mensajerias as m on m.idMensajeria = cd.idMensajeria
+            where c.folioCanje = ".$info."
+            ORDER BY c.foliocanje ASC
+        ";
+        $query = $this->db->query($result);
+        return $query->result();
+    }
+
+    function cantidadPedidoDetalle($dataCanje){
+        $result = "
+            SELECT SUM(cantidad) 
+            FROM `PedidoDetalle` 
+            WHERE `codPremio` = ".$dataCanje." and `status` = 1
         ";
         $query = $this->db->query($result);
         return $query->result();
