@@ -52,17 +52,91 @@ class Welcome extends CI_Controller {
 		$this->load->view('modales/modalBuscarCanje');
 	}
 
+	/*
+		La siguiente funcion, es para llevar a cabo la busqueda del Canje por Folio
+		En los siguientes comentarios podras ver como funciona la logina.
+		Entonces sigue leyendo para que sigas viendo como funciona
+	*/
+
 	public function buscandoCanje(){
+		/*
+			Aqui inicia la funcion, recibiendo dos parametros como la opcion de la busqueda
+			que ya esta delimitada con un switch case, para que sea una unica funcion;
+			el segundo parametro que recibe es la informacion que se escribio en la caja de texto;
+			tal vez seria mas conveniente que la variable de info se cambiara por algo que se entendiera
+			mucho mas y que sea mas general
+		*/
 		$opcion = $this->input->post('opcion');
 		$info = $this->input->post('info');
+		/*
+			Aqui el switch empieza a verificar que opcion es para que haga diferentes tipo de acciones.
+			Una forma importante es cuando se termine de escribir todas las acciones de cada una de las
+			opciones, hay que buscar cual es la que se repite mas, para poder realizar una funcion y
+			que se pueda reducir el numero de lineas que se esta ocupando.
+		*/
 		switch ($opcion) {
+			/*
+				Este es la opcion cuando se selecciona folio
+			*/
 			case "folio":
-				$dataCanje = $this->Sio_model->codPremioCanje($info);
+				/*
+					La siguiente linea va al modelo para extraer el codigo de premio y el codigo de programa
+					del folio del caje que se esta buscando, esta busqueda se esta realizando por que
+					se facilia los querys que se van a llevar y los resultados obtenidos se van a juntar para
+					que el query mas grande pueda obtener toda la informacion que se necesita.
+				*/
+				$dataCanje = $this->Sio_model->codPremioCodProgramaCanje($info);
+				/*
+					El siguiente if unicamente verifica si la informacion existe
+				*/
 				if($dataCanje){
-					//$dataPedidoDetalle = $this->Sio_model->cantidadPedidoDetalle($dataCanje[0]['premio']);
-					//if($dataPedidoDetalle){
-						$this->output->set_output(json_encode($dataCanje[0]['premio']));
-					//}
+					/*
+						la siguiente consulta unicamente obtiene la cantidad que se tiene en la tbl de
+						pedidoDetalle, usando el codigo de premio, previamente obtenido
+					*/
+					$dataPedidoDetalleCantidad = $this->Sio_model->cantidadPedidoDetalle($dataCanje[0]['premio']);
+					/*
+						de igual forma que la anterior linea, esta obtiene la cantidad de la tabla esDiversas
+					*/
+					$dataESDivCantidad = $this->Sio_model->cantidadEsDiversas($dataCanje[0]['premio']);
+					/*
+						La siguiente linea obtiene la cantidad de la tbl canjeDetalle
+					*/
+					$dataCanjeCDetalleCantidad = $this->Sio_model->cantidadCanjeDetalle($dataCanje[0]['premio']);
+					/*
+						Aqui se realiza la comparacion, para verificar si las tres consultas antes realizadas,
+						obtuvieron la informacion correctamente
+					*/
+					if($dataPedidoDetalleCantidad && $dataESDivCantidad && $dataCanjeCDetalleCantidad){
+						/*
+							La siguiente linea de codigo, obtiene informacion de la tabla de activaciones, usando
+							dos parametros, el primero es el codigo de programa obtenido anteriormente y el folio del
+							canje.
+						*/
+						$dataActivacionesCanjes = $this->Sio_model->infoActivacionesCanje($dataCanje[0]['programa'],$info);
+						/*
+							EL if funciona para revisar que si el arreglo esta vacio o no, en caso de que este vacio,
+							unicamente va a reescribir la variable por otro arreglo
+						*/
+						if (empty($dataActivacionesCanjes)) {
+							$dataActivacionesCanjes=array("Activacion"=>"NULL");
+						}
+						/*
+							La siguiente linea de codigo es la parte central de toda la busqueda, ya que esta linea de codigo,
+							ya realiza toda la busqueda del query papa para traer toda la data que se necesita.
+							Actualmente ya esta todo armando, solo que mando un error 500, ya que parece que algo en la sintaxis
+							esta mal, lo unico que faltaria seria ver el por que esta fallando; una vez que se haya solucionado
+							bsucar todas las similitudes que se tenga con las otras opciones y crear una funcion unica para
+							no esta repitiendo codigo a lo pendejo.
+						*/
+						/*
+							Una vez que tengas la soluciones realizada, puedes borrar todas las lineas de codigo que escribiste
+						*/
+						$dataBusquedaCanjeTotal = $this->Sio_model->busquedaCanjeXFolio($dataPedidoDetalleCantidad[0]['cantidad'],$dataESDivCantidad[0]['cantidad'],$dataCanjeCDetalleCantidad[0]['cantidad'],$dataActivacionesCanjes['Activacion'],$info);
+						if($dataBusquedaCanjeTotal){
+							$this->output->set_output(json_encode($dataBusquedaCanjeTotal));
+						}
+					}
 				}else{
 					$this->output->set_output(json_encode(0));
 				}
