@@ -104,8 +104,7 @@ class Sio_model extends CI_Model {
             when pr.nombre like '%Liverp%' and c.ConfirmadoGC=1 and c.DepositadoGC=0 
             then 'Tarjeta Confirmada. Por Depositar'
             when pr.nombre like '%Liverp%' and c.ConfirmadoGC=1 and c.DepositadoGC=1 then 'Tarjeta Activada el ' 
-            CONCAT(case when ".$Activacion." = NULL then 'Desconocido'
-            when ".$Activacion." <> NULL then ".$Activacion.")
+            CONCAT(case when ".$Activacion." IS NULL then 'Desconocido' ELSE ".$Activacion.")
             else '' end as Comentario
             ,cd.noGuia as Guia
             ,case when c.status=1 then 'Status Normal' else 'Cancelado' end as Status
@@ -119,7 +118,11 @@ class Sio_model extends CI_Model {
             ORDER BY c.foliocanje ASC
         ";
         $query = $this->db->query($result);
-        return $query->result_array();
+        if($query){
+            return $query->result_array();
+        }else{
+            return false;
+        }
     }
 
     function updateNameUser($nameUserDataSio){
