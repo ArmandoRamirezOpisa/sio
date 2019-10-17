@@ -57,23 +57,9 @@ class Welcome extends CI_Controller {
 		$info = $this->input->post('info');
 		switch ($opcion) {
 			case "folio":
-				$dataCanje = $this->Sio_model->codPremioCodProgramaCanje($info);
+				$dataCanje = $this->Sio_model->busquedaCanjeXFolio($info);
 				if($dataCanje){
-					$dataPedidoDetalleCantidad = $this->Sio_model->cantidadPedidoDetalle($dataCanje[0]['premio']);
-					$dataESDivCantidad = $this->Sio_model->cantidadEsDiversas($dataCanje[0]['premio']);
-					$dataCanjeCDetalleCantidad = $this->Sio_model->cantidadCanjeDetalle($dataCanje[0]['premio']);
-					if($dataPedidoDetalleCantidad && $dataESDivCantidad && $dataCanjeCDetalleCantidad){
-						$dataActivacionesCanjes = $this->Sio_model->infoActivacionesCanje($dataCanje[0]['programa'],$info);
-						if (empty($dataActivacionesCanjes)) {
-							$dataActivacionesCanjes=array("Activacion"=>"NULL");
-						}
-						//$dataBusquedaCanjeTotal = $this->Sio_model->busquedaCanjeXFolio($dataPedidoDetalleCantidad[0]['cantidad'],$dataESDivCantidad[0]['cantidad'],$dataCanjeCDetalleCantidad[0]['cantidad'],$dataActivacionesCanjes['Activacion'],$info);
-						//if($dataBusquedaCanjeTotal){
-							//if($dataActivacionesCanjes){
-								$this->output->set_output(json_encode($dataActivacionesCanjes['Activacion']));
-							//}
-						//}
-					}
+					$this->output->set_output(json_encode($dataCanje));
 				}else{
 					$this->output->set_output(json_encode(0));
 				}
