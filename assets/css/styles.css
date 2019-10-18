@@ -80,23 +80,29 @@
     margin: 0 10px;
 }
 
-.list-group-item.active{
+.list-group-item.active {
     color: #fff !important;
-    background-color:#343a40!important;
-    border-color:#343a40!important;
+    background-color: #343a40!important;
+    border-color: #343a40!important;
 }
 
-.list-group-item:hover{
+.list-group-item:hover {
     color: #fff !important;
-    background-color:#404040 !important;
-    border-color:#404040 !important;
+    background-color: #404040 !important;
+    border-color: #404040 !important;
     -webkit-transition: all .5s;
     transition: all .5s;
-
 }
 
-#messageAlertConfig{
-    display:none;
+#messageAlertConfig {
+    display: none;
+}
+
+.icon-spin {
+    font-size: 60px;
+    position: relative;
+    left: 50%;
+    margin: 0 auto;
 }
 
 .contentAnimated {

@@ -126,7 +126,9 @@ function sendData(url, opcion, info) {
             opcion: opcion,
             info: info
         },
-        beforeSend: function() {},
+        beforeSend: function() {
+            alertMessage.innerHTML = '<i class="fas fa-sync fa-spin icon-spin"></i>';
+        },
         success: function(result) {
             if (result) {
                 console.log(result);
@@ -138,7 +140,7 @@ function sendData(url, opcion, info) {
             }
         },
         error: function(object, error, anotherObject) {},
-        timeout: 30000,
+        /*timeout: 30000,*/
         type: "POST"
     });
 }

@@ -65,10 +65,20 @@ class Welcome extends CI_Controller {
 				}
 				break;
 			case "nombreParticipante":
-				echo "Your favorite color is blue!";
+				$dataCanje = $this->Sio_model->busquedaCanjeXNombre($info);
+				if($dataCanje){
+					$this->output->set_output(json_encode($dataCanje));
+				}else{
+					$this->output->set_output(json_encode(0));
+				}
 				break;
 			case "po":
-				echo "Your favorite color is green!";
+				$dataCanje = $this->Sio_model->busquedaCanjeXPO($info);
+				if($dataCanje){
+					$this->output->set_output(json_encode($dataCanje));
+				}else{
+					$this->output->set_output(json_encode(0));
+				}
 				break;
 			case "cp":
 				echo "asdasd";
