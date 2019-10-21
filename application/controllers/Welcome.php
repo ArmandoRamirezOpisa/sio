@@ -81,7 +81,12 @@ class Welcome extends CI_Controller {
 				}
 				break;
 			case "cp":
-				echo "asdasd";
+				$dataCanje = $this->Sio_model->busquedaCanjeXCP($info);
+				if($dataCanje){
+					$this->output->set_output(json_encode($dataCanje));
+				}else{
+					$this->output->set_output(json_encode(0));
+				}
 				break;
 			case "guia":
 				echo "asdasd";
