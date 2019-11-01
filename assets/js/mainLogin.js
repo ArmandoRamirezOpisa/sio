@@ -4,6 +4,15 @@ let passwordSio = document.getElementById('passwordSio');
 let accederSio = document.getElementById('accederSio');
 let messageAlert = document.getElementById('messageAlert');
 /* Fin inicio de sesion Sio*/
+
+passwordSio.addEventListener("keyup", loginBtn);
+
+function loginBtn(event) {
+    if (event.keyCode == 13) {
+        accederSioHome();
+    }
+}
+
 accederSio.addEventListener('click', accederSioHome);
 
 function accederSioHome() {
