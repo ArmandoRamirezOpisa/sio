@@ -47,7 +47,7 @@
                     <form>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Usuario</label>
-                            <input type="text" class="form-control" id="usuarioSio" aria-describedby="emailHelp" placeholder="Escribe tu usuario...">
+                            <input type="text" class="form-control" id="usuarioSio" aria-describedby="text" placeholder="Escribe tu usuario...">
                             <small id="emailHelp" class="form-text text-muted">No compartas tu usuario.</small>
                         </div>
                         <div class="form-group">

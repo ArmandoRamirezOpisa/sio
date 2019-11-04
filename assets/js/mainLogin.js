@@ -5,6 +5,8 @@ let accederSio = document.getElementById('accederSio');
 let messageAlert = document.getElementById('messageAlert');
 /* Fin inicio de sesion Sio*/
 
+usuarioSio.addEventListener('keyup', loginBtn);
+
 passwordSio.addEventListener("keyup", loginBtn);
 
 function loginBtn(event) {
