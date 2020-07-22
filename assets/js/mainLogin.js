@@ -36,7 +36,7 @@ function accederSioHome() {
             beforeSend: function() {},
             success: function(result) {
                 if (result) {
-                    location.href = "http://" + location.hostname + "/opisio.com.mx/" + "Welcome/home";
+                    location.href = "http://" + location.hostname + "/sio/" + "Welcome/home";
                 } else {
                     messageAlert.style.display = 'block';
                 }

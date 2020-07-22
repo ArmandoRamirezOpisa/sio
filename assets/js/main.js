@@ -131,9 +131,12 @@ function sendData(url, opcion, info) {
         },
         success: function(result) {
             if (result) {
-                console.log(result);
+                //console.log(result);
                 alertMessage.style.display = "block";
                 alertMessage.innerHTML = '<div class="alert alert-success alert-dismissible fade show" role="alert"><strong>Exito!</strong> Busqueda realizada con exito.<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
+                $('#tableBusquedaCanje').show();
+                $('#tableBusquedaCanje').html(result);
+                document.getElementById('busquedaCanjeText').value = "";
             } else {
                 alertMessage.style.display = "block";
                 alertMessage.innerHTML = '<div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>Error!</strong> Error al realizar la busqueda.<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';

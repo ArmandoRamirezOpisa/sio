@@ -48,7 +48,7 @@ class Welcome extends CI_Controller {
 	}
 
 	public function busquedaCanje(){
-		$this->load->view('busquedaCanje_view');
+		$this->load->view('busquedaCanje/busquedaCanje_view');
 		$this->load->view('modales/modalBuscarCanje');
 	}
 
@@ -59,10 +59,13 @@ class Welcome extends CI_Controller {
 			case "folio":
 				$dataCanje = $this->Sio_model->busquedaCanjeXFolio($info);
 				if($dataCanje){
-					$this->output->set_output(json_encode($dataCanje));
+					$data["dataCanje"] = $dataCanje;
+					//$this->output->set_output(json_encode($dataCanje));
 				}else{
-					$this->output->set_output(json_encode(0));
+					$data["dataCanje"] = false;
+					//$this->output->set_output(json_encode(0));
 				}
+				$this->load->view('busquedaCanje/busquedaCanjeTable',$data);
 				break;
 			case "nombreParticipante":
 				$dataCanje = $this->Sio_model->busquedaCanjeXNombre($info);

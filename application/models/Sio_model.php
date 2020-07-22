@@ -20,7 +20,8 @@ class Sio_model extends CI_Model {
     }
 
     function busquedaCanjeXFolio($info){
-        $result = "
+        $result = "CALL spu_GetCanjesXFolio(".$info.", ".$info.");";
+        /*$result = "
             SELECT  c.codPrograma,c.FolioCanje, e.Empresa,p.Nombre,c.fhOrden,c.Calle,c.Colonia,c.Ciudad,c.Estado,c.cp,c.Pais,c.Telefono,p.eMail,c.PO,c.Atencion, p.Company
             ,cd.Cantidad, cd.codPremio, pr.Nombre as NombrePremio
             , pr.InventarioInicial + ifnull((select sum(pd2.cantidad) from PedidoDetalle pd2 WHERE pd2.codpremio=cd.codpremio and pd2.status=1),0)
@@ -40,7 +41,7 @@ class Sio_model extends CI_Model {
             left join Mensajerias m on m.idMensajeria = cd.idMensajeria
             WHERE  c.foliocanje = ".$info."
             ORDER BY c.foliocanje asc
-        ";
+        ";*/
         $query = $this->db->query($result);
         if($query){
             return $query->result_array();
