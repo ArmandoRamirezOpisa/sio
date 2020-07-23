@@ -21,7 +21,7 @@
                     <td><?php echo $data['folioCanje']; ?></td>
                     <td><?php echo $data['empresa']; ?></td>
                     <td><?php echo $data['nombre']; ?></td>
-                    <td><button id="id=<?php echo $data['folioCanje']; ?>"  type="button" class="info-data" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-info-circle"></i></button></td>
+                    <td><button id="<?php echo $data['folioCanje']; ?>"  type="button" class="info-data" data-toggle="modal" data-target="#moreInfo" onclick="verMasInfo(this)"><i class="fas fa-info-circle"></i></button></td>
                     <td><button id="<?php echo $data['folioCanje']; ?>" type="button" class="info-data" data-toggle="modal" data-target="#ModalEdit"><i class="fas fa-edit"></i></button></td>
                 </tr>
                 <?php } ?>

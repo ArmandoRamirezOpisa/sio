@@ -8,7 +8,6 @@ class Welcome extends CI_Controller {
 		$this->load->library('email');
 		$this->load->library('session');
 		$this->load->model('Sio_model');
-
 	}
 
 	public function index(){
@@ -49,7 +48,8 @@ class Welcome extends CI_Controller {
 
 	public function busquedaCanje(){
 		$this->load->view('busquedaCanje/busquedaCanje_view');
-		$this->load->view('modales/modalBuscarCanje');
+		$this->load->view('busquedaCanje/modal/modalBuscarCanje');
+		$this->load->view('busquedaCanje/modal/modalEditarCanje');
 	}
 
 	public function buscandoCanje(){
@@ -60,10 +60,8 @@ class Welcome extends CI_Controller {
 				$dataCanje = $this->Sio_model->busquedaCanjeXFolio($info);
 				if($dataCanje){
 					$data["dataCanje"] = $dataCanje;
-					//$this->output->set_output(json_encode($dataCanje));
 				}else{
 					$data["dataCanje"] = false;
-					//$this->output->set_output(json_encode(0));
 				}
 				$this->load->view('busquedaCanje/busquedaCanjeTable',$data);
 				break;
@@ -98,6 +96,17 @@ class Welcome extends CI_Controller {
 				echo "company";
 				break;
 		}
+	}
+
+	public function moreInfo(){
+		$folioCanje = $this->input->post('folioCanje');
+		$moreDataSearch = $this->Sio_model->busquedaCanjeXFolio2($folioCanje);
+		if ($moreDataSearch){
+			$data['moreDataSearch'] = $moreDataSearch;
+		}else{
+			$data['moreDataSearch'] = false;
+		}
+		$this->load->view('busquedaCanje/modal/modalInfo/infoBuscarCanje',$data);
 	}
 
 	public function confirmarTarjetasEntregadas(){
