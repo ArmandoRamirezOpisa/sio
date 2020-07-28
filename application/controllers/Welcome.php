@@ -60,18 +60,23 @@ class Welcome extends CI_Controller {
 				$dataCanje = $this->Sio_model->busquedaCanjeXFolio($info);
 				if($dataCanje){
 					$data["dataCanje"] = $dataCanje;
+					$data['opcion'] = $opcion;
 				}else{
 					$data["dataCanje"] = false;
+					$data['opcion'] = false;
 				}
 				$this->load->view('busquedaCanje/busquedaCanjeTable',$data);
 				break;
 			case "nombreParticipante":
 				$dataCanje = $this->Sio_model->busquedaCanjeXNombre($info);
 				if($dataCanje){
-					$this->output->set_output(json_encode($dataCanje));
+					$data["dataCanje"] = $dataCanje;
+					$data['opcion'] = $opcion;
 				}else{
-					$this->output->set_output(json_encode(0));
+					$data["dataCanje"] = false;
+					$data['opcion'] = false;
 				}
+				$this->load->view('busquedaCanje/busquedaCanjeTable',$data);
 				break;
 			case "po":
 				$dataCanje = $this->Sio_model->busquedaCanjeXPO($info);
@@ -100,7 +105,15 @@ class Welcome extends CI_Controller {
 
 	public function moreInfo(){
 		$folioCanje = $this->input->post('folioCanje');
-		$moreDataSearch = $this->Sio_model->busquedaCanjeXFolio2($folioCanje);
+		$opcion = $this->input->post('opcion');
+		switch ($opcion) {
+			case "folio":
+				$moreDataSearch = $this->Sio_model->busquedaCanjeXFolio2($folioCanje);		
+				break;
+			case "nombreParticipante":
+				$moreDataSearch = $this->Sio_model->busquedaCanjeXNombre2($folioCanje);
+				break;
+		}
 		if ($moreDataSearch){
 			$data['moreDataSearch'] = $moreDataSearch;
 		}else{
