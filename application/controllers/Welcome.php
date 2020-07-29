@@ -81,24 +81,46 @@ class Welcome extends CI_Controller {
 			case "po":
 				$dataCanje = $this->Sio_model->busquedaCanjeXPO($info);
 				if($dataCanje){
-					$this->output->set_output(json_encode($dataCanje));
+					$data["dataCanje"] = $dataCanje;
+					$data['opcion'] = $opcion;
 				}else{
-					$this->output->set_output(json_encode(0));
+					$data["dataCanje"] = false;
+					$data['opcion'] = false;
 				}
+				$this->load->view('busquedaCanje/busquedaCanjeTable',$data);
 				break;
 			case "cp":
 				$dataCanje = $this->Sio_model->busquedaCanjeXCP($info);
 				if($dataCanje){
-					$this->output->set_output(json_encode($dataCanje));
+					$data["dataCanje"] = $dataCanje;
+					$data['opcion'] = $opcion;
 				}else{
-					$this->output->set_output(json_encode(0));
+					$data["dataCanje"] = false;
+					$data['opcion'] = false;
 				}
+				$this->load->view('busquedaCanje/busquedaCanjeTable',$data);
 				break;
 			case "guia":
-				echo "asdasd";
+				$dataCanje = $this->Sio_model->busquedaCanjeXGuia($info);
+				if($dataCanje){
+					$data["dataCanje"] = $dataCanje;
+					$data['opcion'] = $opcion;
+				}else{
+					$data["dataCanje"] = false;
+					$data['opcion'] = false;
+				}
+				$this->load->view('busquedaCanje/busquedaCanjeTable',$data);
 				break;
 			case "company":
-				echo "company";
+				$dataCanje = $this->Sio_model->busquedaCanjeXCompany($info);
+				if($dataCanje){
+					$data["dataCanje"] = $dataCanje;
+					$data['opcion'] = $opcion;
+				}else{
+					$data["dataCanje"] = false;
+					$data['opcion'] = false;
+				}
+				$this->load->view('busquedaCanje/busquedaCanjeTable',$data);
 				break;
 		}
 	}
@@ -112,6 +134,18 @@ class Welcome extends CI_Controller {
 				break;
 			case "nombreParticipante":
 				$moreDataSearch = $this->Sio_model->busquedaCanjeXNombre2($folioCanje);
+				break;
+			case 'po':
+				$moreDataSearch = $this->Sio_model->busquedaCanjeXFolio2($folioCanje);
+				break;
+			case 'cp':
+				$moreDataSearch = $this->Sio_model->busquedaCanjeXFolio2($folioCanje);
+				break;
+			case 'guia':
+				$moreDataSearch = $this->Sio_model->busquedaCanjeXFolio2($folioCanje);
+				break;
+			case 'company':
+				$moreDataSearch = $this->Sio_model->busquedaCanjeXFolio2($folioCanje);
 				break;
 		}
 		if ($moreDataSearch){
