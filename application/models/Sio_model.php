@@ -100,7 +100,7 @@ class Sio_model extends CI_Model {
     }
 
     function canjeAEditar($folioCanjeEditar){
-        $result = "CALL spu_GetCanjeTotal('".$folioCanjeEditar."');";
+        $result = "CALL spu_GetCanjeInformacionAEditar('".$folioCanjeEditar."');";
         $query = $this->db->query($result);
         if($query){
             return $query->result_array();
