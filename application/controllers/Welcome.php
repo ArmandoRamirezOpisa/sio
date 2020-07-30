@@ -124,6 +124,17 @@ class Welcome extends CI_Controller {
 		$this->load->view('busquedaCanje/modal/modalInfo/infoBuscarCanje',$data);
 	}
 
+	public function editInfoCanje(){
+		$folioCanjeEditar = $this->input->post('folioCanjeEditar');
+		$dataEditarCanje = $this->Sio_model->canjeAEditar($folioCanjeEditar);
+		if($dataEditarCanje){
+			$data['dataEditarCanje'] = $dataEditarCanje;
+		}else{
+			$data['dataEditarCanje'] = false;
+		}
+		$this->load->view('busquedaCanje/modal/modalInfo/mEditarCanje',$data);
+	}
+
 	public function confirmarTarjetasEntregadas(){
 		$this->load->view('confirmarTarjetasEntregadas_view');
 		$this->load->view('modales/modalTarjetasEntregadas');

@@ -150,7 +150,6 @@ function sendData(url, opcion, info) {
 
 function verMasInfo(id) {
     var folioCanje = id.id;
-    console.log(`Este es el folio: ${ folioCanje }`);
     $.ajax({
         url: 'http://www.opisa.com/sio/Welcome/moreInfo',
         async: 'true',
@@ -166,6 +165,31 @@ function verMasInfo(id) {
                 window.location.reload();
             } else {
                 $('#modalBodyMoreInfo').html(result);
+            }
+        },
+        error: function(object, error, anotherObject) {},
+        timeout: 30000,
+        type: "POST"
+    });
+}
+
+function editarInfo(id) {
+    var folioCanjeEditar = id.id;
+    $.ajax({
+        url: 'http://www.opisa.com/sio/Welcome/editInfoCanje',
+        async: 'true',
+        cache: false,
+        contentType: "application/x-www-form-urlencoded",
+        global: true,
+        ifModified: false,
+        processData: true,
+        data: { "folioCanjeEditar": folioCanjeEditar },
+        beforeSend: function() {},
+        success: function(result) {
+            if (result == "0") {
+                window.location.reload();
+            } else {
+                $('#editarInfoCanje').html(result);
             }
         },
         error: function(object, error, anotherObject) {},

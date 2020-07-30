@@ -99,6 +99,16 @@ class Sio_model extends CI_Model {
         }
     }
 
+    function canjeAEditar($folioCanjeEditar){
+        $result = "CALL spu_GetCanjeTotal('".$folioCanjeEditar."');";
+        $query = $this->db->query($result);
+        if($query){
+            return $query->result_array();
+        }else{
+            return false;
+        }
+    }
+
     function updateNameUser($nameUserDataSio){
         $query = $this->db->query("
             UPDATE `Usuarios_SIO` 
