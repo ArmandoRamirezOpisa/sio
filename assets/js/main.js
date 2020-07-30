@@ -150,8 +150,7 @@ function sendData(url, opcion, info) {
 
 function verMasInfo(id) {
     var folioCanje = id.id;
-    var dataCanje = folioCanje.split('-');
-    console.log(`Este es el folio: ${ dataCanje }`);
+    console.log(`Este es el folio: ${ folioCanje }`);
     $.ajax({
         url: 'http://www.opisa.com/sio/Welcome/moreInfo',
         async: 'true',
@@ -160,7 +159,7 @@ function verMasInfo(id) {
         global: true,
         ifModified: false,
         processData: true,
-        data: { "folioCanje": dataCanje[0], "opcion": dataCanje[1] },
+        data: { "folioCanje": folioCanje },
         beforeSend: function() {},
         success: function(result) {
             if (result == "0") {
