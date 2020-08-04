@@ -73,9 +73,11 @@ function busquedaCanjeScreen() {
     cambiandoPantalla("busquedaCanje", "contenidoSio");
 }
 
-let busquedaCanjeText = document.getElementById('busquedaCanjeText');
-
-busquedaCanjeText.addEventListener("keyup", buscandoCanjeData);
+function buscandoCankeDataTxt(event) {
+    if (event.keyCode == 13) {
+        buscandoCanjeData();
+    }
+}
 
 function buscandoCanjeData() {
     const alertMessage = document.getElementById('alertMessage');

@@ -15,7 +15,7 @@
             </div>
             <div class="form-group">
                 <label for="exampleFormControlInput1"><strong>Busqueda:</strong></label>
-                <input type="text" class="form-control" id="busquedaCanjeText" placeholder="Realiza tu busqueda">
+                <input type="text" class="form-control" id="busquedaCanjeText" placeholder="Realiza tu busqueda" onkeyup="buscandoCankeDataTxt(event)">
             </div>
             <button type="button" class="btn btn-dark" id="buscandoCanje" onclick="buscandoCanjeData()"><i class="fas fa-search"></i> Buscar</button>
         </form>
