@@ -18,6 +18,7 @@
                     <td><?php echo $data['codPrograma']; ?></td>
                     <td><?php echo $data['FolioCanje']; ?></td>
                     <td><?php echo $data['codPremio']; ?></td>
+					<td><?php echo $data['NombrePremio']; ?></td>
                     <td><?php echo $data['Nombre']; ?></td>
                     <td><?php echo $data['fhOrden']; ?></td>
                     <td><button id="<?php echo $data['FolioCanje']; ?>"  type="button" class="info-data" data-toggle="modal" data-target="#moreInfo" onclick="verMasInfo(this)"><i class="fas fa-info-circle"></i></button></td>
