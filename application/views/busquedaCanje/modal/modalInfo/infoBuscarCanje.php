@@ -37,7 +37,7 @@
                             codPremio: <span><?php echo $moreDataSearch[0]['Cantidad']; ?></span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">
-                            codPremio: <span><?php echo $moreDataSearch[0]['codPremio']; ?></span>
+                            Empresa: <span><?php echo $moreDataSearch[0]['Empresa']; ?></span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             NombrePremio: <span><?php echo $moreDataSearch[0]['NombrePremio']; ?></span>
