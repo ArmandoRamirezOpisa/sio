@@ -105,6 +105,10 @@
     margin: 0 auto;
 }
 
+#btnSaveInfo {
+    display: none;
+}
+
 .contentAnimated {
     -webkit-animation: showContent 5s ease-in-out;
     animation: showContent 5s ease-in-out;

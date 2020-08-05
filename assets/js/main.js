@@ -204,6 +204,31 @@ function editarInfo(id) {
     });
 }
 
+function editInfoCanje(id) {
+    let idBtn = id.id;
+    let btnEditInfo = document.getElementById(idBtn);
+    document.getElementById('calleTxt').disabled = false;
+    document.getElementById('coloniaTxt').disabled = false;
+    document.getElementById('ciudadTxt').disabled = false;
+    document.getElementById('estadoTxt').disabled = false;
+    document.getElementById('cpTxt').disabled = false;
+    document.getElementById('paisTxt').disabled = false;
+    document.getElementById('telefonoTxt').disabled = false;
+    document.getElementById('emailTxt').disabled = false;
+    document.getElementById('poTxt').disabled = false;
+    document.getElementById('atencionTxt').disabled = false;
+    document.getElementById('companyTxt').disabled = false;
+    document.getElementById('empresaTxt').disabled = false;
+    document.getElementById('stockTxt').disabled = false;
+    document.getElementById('programacionTxt').disabled = false;
+    document.getElementById('envioTxt').disabled = false;
+    document.getElementById('guiaTxt').disabled = false;
+    document.getElementById('statusTxt').disabled = false;
+    document.getElementById('comentarioTxt').disabled = false;
+    btnEditInfo.style.display = 'none';
+    document.getElementById('btnSaveInfo').style.display = 'block';
+}
+
 confirmarTarjetasEntregadas.addEventListener('click', confirmarTarjetasEntregadasScreen);
 
 function confirmarTarjetasEntregadasScreen() {
