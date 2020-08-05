@@ -12,7 +12,7 @@
                 </div>
                 <div class="modal-footer">
 					<button type="button" class="btn btn-dark" id="btnEditInfo" onclick="editInfoCanje(this)"><i class="fas fa-edit"></i> Editar</button>
-					<button type="button" class="btn btn-dark" id="btnSaveInfo"><i class="fas fa-save"></i> Guardar</button>
+					<button type="button" class="btn btn-dark" id="btnSaveInfo" onclick="updateCanje()"><i class="fas fa-save"></i> Actualizar</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times-circle"></i> Cerrar</button>
                 </div>
             </div>

@@ -229,6 +229,59 @@ function editInfoCanje(id) {
     document.getElementById('btnSaveInfo').style.display = 'block';
 }
 
+function updateCanje() {
+    let btnEditInfo = document.getElementById('btnEditInfo');
+    let btnSaveInfo = document.getElementById('btnSaveInfo');
+    var calleTxt = document.getElementById('calleTxt');
+    var coloniaTxt = document.getElementById('coloniaTxt');
+    var ciudadTxt = document.getElementById('ciudadTxt');
+    var estadoTxt = document.getElementById('estadoTxt');
+    var cpTxt = document.getElementById('cpTxt');
+    var paisTxt = document.getElementById('paisTxt');
+    var telefonoTxt = document.getElementById('telefonoTxt');
+    var emailTxt = document.getElementById('emailTxt');
+    var poTxt = document.getElementById('poTxt');
+    var atencionTxt = document.getElementById('atencionTxt');
+    var companyTxt = document.getElementById('companyTxt');
+    var empresaTxt = document.getElementById('empresaTxt');
+    var stockTxt = document.getElementById('stockTxt');
+    var programacionTxt = document.getElementById('programacionTxt');
+    var envioTxt = document.getElementById('envioTxt');
+    var guiaTxt = document.getElementById('guiaTxt');
+    var statusTxt = document.getElementById('statusTxt');
+    var comentarioTxt = document.getElementById('comentarioTxt');
+    if (calleTxt.value === "" || coloniaTxt.value === "" || ciudadTxt.value === "" || estadoTxt.value === "" || cpTxt.value === "" || paisTxt.value === "" || telefonoTxt.value === "" || emailTxt.value === "" || poTxt.value === "" || atencionTxt.value === "" || companyTxt.value === "" || empresaTxt.value === "" || stockTxt.value === "" || programacionTxt.value === "" || envioTxt.value === "" || guiaTxt.value === "" || statusTxt.value === "" || comentarioTxt.value === "") {
+        alert('Algun campo esta vacio');
+    } else {
+        let cp = cpTxt.value.length === 5 ? true : false;
+        console.log(`CP: ${cp}`);
+        /* Continuar desde aqui */
+        var emailTest = '/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i';
+        console.log(`Email: ${emailTest.test(emailTxt)}`);
+
+    }
+    calleTxt.style.disabled = false;
+    coloniaTxt.style.disabled = false;
+    ciudadTxt.style.disabled = false;
+    estadoTxt.style.disabled = false;
+    cpTxt.style.disabled = false;
+    paisTxt.style.disabled = false;
+    telefonoTxt.style.disabled = false;
+    emailTxt.style.disabled = false;
+    poTxt.style.disabled = false;
+    atencionTxt.style.disabled = false;
+    companyTxt.style.disabled = false;
+    empresaTxt.style.disabled = false;
+    stockTxt.style.disabled = false;
+    programacionTxt.style.disabled = false;
+    envioTxt.style.disabled = false;
+    guiaTxt.style.disabled = false;
+    statusTxt.style.disabled = false;
+    comentarioTxt.style.disabled = false;
+    btnEditInfo.style.display = 'block';
+    btnSaveInfo.style.display = 'none';
+}
+
 confirmarTarjetasEntregadas.addEventListener('click', confirmarTarjetasEntregadasScreen);
 
 function confirmarTarjetasEntregadasScreen() {
