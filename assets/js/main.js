@@ -243,6 +243,7 @@ function updateCanje() {
     var poTxt = document.getElementById('poTxt');
     var atencionTxt = document.getElementById('atencionTxt');
     var companyTxt = document.getElementById('companyTxt');
+    var cantidadTxt = document.getElementById('cantidadTxt');
     var empresaTxt = document.getElementById('empresaTxt');
     var stockTxt = document.getElementById('stockTxt');
     var programacionTxt = document.getElementById('programacionTxt');
@@ -250,36 +251,61 @@ function updateCanje() {
     var guiaTxt = document.getElementById('guiaTxt');
     var statusTxt = document.getElementById('statusTxt');
     var comentarioTxt = document.getElementById('comentarioTxt');
-    if (calleTxt.value === "" || coloniaTxt.value === "" || ciudadTxt.value === "" || estadoTxt.value === "" || cpTxt.value === "" || paisTxt.value === "" || telefonoTxt.value === "" || emailTxt.value === "" || poTxt.value === "" || atencionTxt.value === "" || companyTxt.value === "" || empresaTxt.value === "" || stockTxt.value === "" || programacionTxt.value === "" || envioTxt.value === "" || guiaTxt.value === "" || statusTxt.value === "" || comentarioTxt.value === "") {
+    if (calleTxt.value === "" || coloniaTxt.value === "" || ciudadTxt.value === "" || estadoTxt.value === "" || cpTxt.value === "" || paisTxt.value === "" || telefonoTxt.value === "" || emailTxt.value === "" || poTxt.value === "" || atencionTxt.value === "" || companyTxt.value === "" || cantidadTxt.value === "" || empresaTxt.value === "" || stockTxt.value === "" || programacionTxt.value === "" || envioTxt.value === "" || guiaTxt.value === "" || statusTxt.value === "" || comentarioTxt.value === "") {
         alert('Algun campo esta vacio');
     } else {
         let cp = cpTxt.value.length === 5 ? true : false;
-        console.log(`CP: ${cp}`);
-        /* Continuar desde aqui */
-        var emailTest = '/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i';
-        console.log(`Email: ${emailTest.test(emailTxt)}`);
-
+        var mail = ValidateEmail(emailTxt.value);
+        if (mail || cp) {
+            console.log(`Calle: ${calleTxt.value} Upd: Canje`);
+            console.log(`Colonia: ${coloniaTxt.value} Upd: Canje`);
+            console.log(`Ciudad: ${ciudadTxt.value} Upd: Canje`);
+            console.log(`Estado: ${estadoTxt.value} Upd: Canje`);
+            console.log(`Cp: ${cpTxt.value} Upd: Canje`);
+            console.log(`Pais: ${paisTxt.value} Upd: Canje`);
+            console.log(`Telefono: ${telefonoTxt.value} Upd: Canje`);
+            console.log(`Email: ${emailTxt.value} Upd: Participante`);
+            console.log(`PO: ${poTxt.value} Upd: Canje`);
+            console.log(`Atencion: ${atencionTxt.value} Upd: Canje`);
+            console.log(`Company: ${companyTxt.value} Upd: Participante`);
+            console.log(`Cantidad: ${cantidadTxt} Upd: Canje Detalle`)
+            console.log(`Empresa: ${empresaTxt.value} Upd: Empresa`);
+            console.log(`Stock: ${stockTxt.value} Upd: Revisar`);
+            console.log(`Programacion: ${programacionTxt.value} Upd: Revisar`);
+            console.log(`Envio: ${envioTxt.value} Upd: Revisar`);
+            console.log(`Guia: ${guiaTxt.value} Upd: Revisar`);
+            console.log(`Status: ${statusTxt.value} Upd: Revisar`);
+            console.log(`Comentario: ${comentarioTxt.value} Upd: Revisar`);
+            calleTxt.style.disabled = true;
+            coloniaTxt.style.disabled = true;
+            ciudadTxt.style.disabled = true;
+            estadoTxt.style.disabled = true;
+            cpTxt.style.disabled = true;
+            paisTxt.style.disabled = true;
+            telefonoTxt.style.disabled = true;
+            emailTxt.style.disabled = true;
+            poTxt.style.disabled = true;
+            atencionTxt.style.disabled = true;
+            companyTxt.style.disabled = true;
+            empresaTxt.style.disabled = true;
+            stockTxt.style.disabled = true;
+            programacionTxt.style.disabled = true;
+            envioTxt.style.disabled = true;
+            guiaTxt.style.disabled = true;
+            statusTxt.style.disabled = true;
+            comentarioTxt.style.disabled = true;
+            btnEditInfo.style.display = 'block';
+            btnSaveInfo.style.display = 'none';
+        }
     }
-    calleTxt.style.disabled = false;
-    coloniaTxt.style.disabled = false;
-    ciudadTxt.style.disabled = false;
-    estadoTxt.style.disabled = false;
-    cpTxt.style.disabled = false;
-    paisTxt.style.disabled = false;
-    telefonoTxt.style.disabled = false;
-    emailTxt.style.disabled = false;
-    poTxt.style.disabled = false;
-    atencionTxt.style.disabled = false;
-    companyTxt.style.disabled = false;
-    empresaTxt.style.disabled = false;
-    stockTxt.style.disabled = false;
-    programacionTxt.style.disabled = false;
-    envioTxt.style.disabled = false;
-    guiaTxt.style.disabled = false;
-    statusTxt.style.disabled = false;
-    comentarioTxt.style.disabled = false;
-    btnEditInfo.style.display = 'block';
-    btnSaveInfo.style.display = 'none';
+}
+
+function ValidateEmail(mail) {
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
+        return (true);
+    } else {
+        return (false);
+    }
 }
 
 confirmarTarjetasEntregadas.addEventListener('click', confirmarTarjetasEntregadasScreen);
