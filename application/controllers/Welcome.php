@@ -129,6 +129,12 @@ class Welcome extends CI_Controller {
 		$dataEditarCanje = $this->Sio_model->canjeAEditar($folioCanjeEditar);
 		if($dataEditarCanje){
 			$data['dataEditarCanje'] = $dataEditarCanje;
+			$mensajerias = $this->Sio_model->dataMensajeria();
+			if($mensajerias){
+				$data['mensajerias'] = $mensajerias;
+			}else{
+				$data['mensajerias'] = false;
+			}
 		}else{
 			$data['dataEditarCanje'] = false;
 		}

@@ -10,6 +10,7 @@
                     <th scope="col">Nombre Participante</th>
                     <th scope="col">Fecha Orden</th>
                     <th scope="col">Ver mas</th>
+					<th scope="col">Mas info</th>
                 </tr>
             </thead>
             <tbody>
@@ -22,6 +23,7 @@
                     <td><?php echo $data['Nombre']; ?></td>
                     <td><?php echo $data['fhOrden']; ?></td>
                     <td><button id="<?php echo $data['FolioCanje']; ?>"  type="button" class="info-data" data-toggle="modal" data-target="#moreInfo" onclick="verMasInfo(this)"><i class="fas fa-info-circle"></i></button></td>
+					<td><button id="<?php echo $data['FolioCanje']; ?>"  type="button" class="info-data" data-toggle="modal" data-target="#ModalEdit" onclick="editarInfo(this)"><i class="fas fa-info-circle"></i></button></td>
                 </tr>
                 <?php } ?>
             </tbody>

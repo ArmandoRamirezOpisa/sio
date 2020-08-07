@@ -107,7 +107,20 @@ class Sio_model extends CI_Model {
         }else{
             return false;
         }
-    }
+	}
+	
+	function dataMensajeria(){
+		$resultado = "select mensajeria from Mensajerias;";
+        $query1 = $this->db->query($resultado);
+        if($query1){
+			$data = $query1->result();
+			$query1->next_result(); 
+			$query1->free_result();
+			return $data;
+        }else{
+            return false;
+        }
+	}
 
     function updateNameUser($nameUserDataSio){
         $query = $this->db->query("
