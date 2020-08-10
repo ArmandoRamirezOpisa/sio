@@ -63,11 +63,7 @@
     						<label for="mensajeria">Mensajeria Canje Detalle</label>
     						<select class="form-control" id="mensajeria">
       							<option>Selecciona una mensajeria:</option>
-								<?php if($mensajerias){ ?>
-								<?php foreach($mensajerias as $mensajeria){ ?>
-								<option><?php echo $mensajeria['mensajeria']; ?></option>
-								<?php } ?>
-								<?php } ?>
+								<option>mensajeria</option>
     						</select>
   						</div>
 						<div class="form-group">

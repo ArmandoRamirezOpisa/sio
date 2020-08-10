@@ -129,12 +129,25 @@ class Welcome extends CI_Controller {
 		$dataEditarCanje = $this->Sio_model->canjeAEditar($folioCanjeEditar);
 		if($dataEditarCanje){
 			$data['dataEditarCanje'] = $dataEditarCanje;
+			/* Opcion actualizar el query de las mensajerias y juntarlos
+			Po no se edita
+			stock no se edita
+			cantidad no se edita
+			Empresa cambiar por cliente
+			Empresa no se edita
+			programacion no se edita
+			comentario no se edita
+			envio no se edita
+			guita no se edita
+			id participante no se edita
+			status no se edita
+			id participante no se edita
 			$mensajerias = $this->Sio_model->dataMensajeria();
 			if($mensajerias){
 				$data['mensajerias'] = $mensajerias;
 			}else{
 				$data['mensajerias'] = false;
-			}
+			}*/
 		}else{
 			$data['dataEditarCanje'] = false;
 		}
