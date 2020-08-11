@@ -179,31 +179,6 @@ function verMasInfo(id) {
     });
 }
 
-function editarInfo(id) {
-    var folioCanjeEditar = id.id;
-    $.ajax({
-        url: 'http://www.opisa.com/sio/Welcome/editInfoCanje',
-        async: 'true',
-        cache: false,
-        contentType: "application/x-www-form-urlencoded",
-        global: true,
-        ifModified: false,
-        processData: true,
-        data: { "folioCanjeEditar": folioCanjeEditar },
-        beforeSend: function() {},
-        success: function(result) {
-            if (result == "0") {
-                window.location.reload();
-            } else {
-                $('#editarInfoCanje').html(result);
-            }
-        },
-        error: function(object, error, anotherObject) {},
-        timeout: 30000,
-        type: "POST"
-    });
-}
-
 function editInfoCanje(id) {
     let idBtn = id.id;
     let btnEditInfo = document.getElementById(idBtn);

@@ -99,8 +99,8 @@ class Sio_model extends CI_Model {
         }
     }
 
-    function canjeAEditar($folioCanjeEditar){
-        $result = "CALL spu_GetCanjeInformacionAEditar('".$folioCanjeEditar."');";
+    function canjeAEditar($loginUserDataSio){
+        $result = "CALL spu_GetCanjeInformacionAEditar('".$loginUserDataSio['folioCanjeDetalle']."');";
         $query = $this->db->query($result);
         if($query){
             return $query->result_array();

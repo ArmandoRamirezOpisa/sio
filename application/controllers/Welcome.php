@@ -36,7 +36,6 @@ class Welcome extends CI_Controller {
 	}
 
 	public function home(){
-
 		if($this->session->userdata('nombreUsuario')){
 			$this->load->view('includes/home_view_header');
 			$this->load->view('home_view');
@@ -124,34 +123,17 @@ class Welcome extends CI_Controller {
 		$this->load->view('busquedaCanje/modal/modalInfo/infoBuscarCanje',$data);
 	}
 
-	public function editInfoCanje(){
-		$folioCanjeEditar = $this->input->post('folioCanjeEditar');
-		$dataEditarCanje = $this->Sio_model->canjeAEditar($folioCanjeEditar);
+	public function detalleCanje(){
+		$loginUserDataSio = array(
+			"folioCanjeDetalle"=>$this->input->get('folio')
+		);
+		$dataEditarCanje = $this->Sio_model->canjeAEditar($loginUserDataSio);
 		if($dataEditarCanje){
 			$data['dataEditarCanje'] = $dataEditarCanje;
-			/* Opcion actualizar el query de las mensajerias y juntarlos
-			Po no se edita
-			stock no se edita
-			cantidad no se edita
-			Empresa cambiar por cliente
-			Empresa no se edita
-			programacion no se edita
-			comentario no se edita
-			envio no se edita
-			guita no se edita
-			id participante no se edita
-			status no se edita
-			id participante no se edita
-			$mensajerias = $this->Sio_model->dataMensajeria();
-			if($mensajerias){
-				$data['mensajerias'] = $mensajerias;
-			}else{
-				$data['mensajerias'] = false;
-			}*/
 		}else{
 			$data['dataEditarCanje'] = false;
 		}
-		$this->load->view('busquedaCanje/modal/modalInfo/mEditarCanje',$data);
+		$this->load->view('busquedaCanje/detalleCanje',$data);
 	}
 
 	public function confirmarTarjetasEntregadas(){
