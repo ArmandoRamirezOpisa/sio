@@ -140,6 +140,98 @@
 	<div class="container">
 		<hr>
 		<h2>Informacion Canje Detalle</h2>
+		<div class="row">
+			<div class="col">
+				<div class="form-group row">
+    				<label for="mensajeria" class="col-sm-2 col-form-label">Mensajeria: </label>
+    				<div class="col-sm-10">
+						<select class="form-control" id="mensajeria">
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+    					</select>
+    				</div>
+  				</div>
+			</div>
+    		<div class="col">
+				<div class="form-group row">
+    				<label for="codPremio" class="col-sm-2 col-form-label">CodPremio: </label>
+    				<div class="col-sm-10">
+						<input type="text" class="form-control" id="codPremio">
+    				</div>
+  				</div>
+			</div>
+			<div class="w-100"></div>
+			<div class="col">
+				<div class="form-group row">
+    				<label for="cantidad" class="col-sm-2 col-form-label">Cantidad: </label>
+    				<div class="col-sm-10">
+						<input type="text" class="form-control" id="cantidad">
+    				</div>
+  				</div>
+			</div>
+			<div class="col">
+				<div class="form-group row">
+    				<label for="numGuia" class="col-sm-2 col-form-label">NoGuia: </label>
+    				<div class="col-sm-10">
+						<input type="text" class="form-control" id="noGuia">
+    				</div>
+  				</div>
+			</div>
+			<div class="w-100"></div>
+			<div class="col">
+				<div class="form-group row">
+    				<label for="Reenvio" class="col-sm-2 col-form-label">Reenvio: </label>
+    				<div class="col-sm-10">
+						<select class="form-control" id="reenvio">
+							<option>Si</option>
+							<option>No</option>
+    					</select>
+    				</div>
+  				</div>
+			</div>
+			<div class="col">
+				<div class="form-group row">
+    				<label for="comentarioReenvio" class="col-sm-2 col-form-label">ComentariosReenvio: </label>
+    				<div class="col-sm-10">
+						<textarea class="form-control" id="comentariosReenvio" rows="3"></textarea>
+    				</div>
+  				</div>
+			</div>
+		</div>
+	</div>
+	<hr>
+	<div class="container">
+		<table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">idCanjeDet</th>
+                    <th scope="col">codPremio</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Mensajeria</th>
+                    <th scope="col">No Guia</th>
+                    <th scope="col">Reenvio</th>
+					<th scope="col">Comentario</th>
+					<th scope="col">Editar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>hlashd</td>
+					<td>1</td>
+                    <td>ups</td>
+                    <td>asd</td>
+					<td>a;sdl</td>
+                    <td>asd</td>
+					<td>editar</td>
+                </tr>
+            </tbody>
+        </table>
 	</div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
