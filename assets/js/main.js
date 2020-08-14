@@ -154,7 +154,7 @@ function sendData(url, opcion, info) {
     });
 }
 
-function verMasInfo(id) {
+/*function verMasInfo(id) {
     var folioCanje = id.id;
     $.ajax({
         url: 'http://www.opisa.com/sio/Welcome/moreInfo',
@@ -177,7 +177,7 @@ function verMasInfo(id) {
         timeout: 30000,
         type: "POST"
     });
-}
+}*/
 
 function editInfoCanje(id) {
     let idBtn = id.id;

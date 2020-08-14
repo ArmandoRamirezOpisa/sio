@@ -30,7 +30,7 @@ class Sio_model extends CI_Model {
     }
 
     function busquedaCanjeXFolio2($folioCanje){
-        $result = "CALL spu_GetCanjesXFolio2(".$folioCanje.");";
+        $result = "CALL spu_GetCanjesXFolio2(".$folioCanje['folioCanje'].");";
         $query = $this->db->query($result);
         if($query){
             return $query->result_array();

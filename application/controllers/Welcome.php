@@ -47,8 +47,6 @@ class Welcome extends CI_Controller {
 
 	public function busquedaCanje(){
 		$this->load->view('busquedaCanje/busquedaCanje_view');
-		$this->load->view('busquedaCanje/modal/modalBuscarCanje');
-		$this->load->view('busquedaCanje/modal/modalEditarCanje');
 	}
 
 	public function buscandoCanje(){
@@ -112,15 +110,17 @@ class Welcome extends CI_Controller {
 		}
 	}
 
-	public function moreInfo(){
-		$folioCanje = $this->input->post('folioCanje');
-		$moreDataSearch = $this->Sio_model->busquedaCanjeXFolio2($folioCanje);
+	public function verMasCanje(){
+		$DataSio = array(
+			"folioCanje"=>$this->input->get('folio')
+		);
+		$moreDataSearch = $this->Sio_model->busquedaCanjeXFolio2($DataSio);
 		if ($moreDataSearch){
 			$data['moreDataSearch'] = $moreDataSearch;
 		}else{
 			$data['moreDataSearch'] = false;
 		}
-		$this->load->view('busquedaCanje/modal/modalInfo/infoBuscarCanje',$data);
+		$this->load->view('busquedaCanje/infoBuscarCanje',$data);
 	}
 
 	public function detalleCanje(){

@@ -22,7 +22,7 @@
 					<td><?php echo $data['NombrePremio']; ?></td>
                     <td><?php echo $data['Nombre']; ?></td>
                     <td><?php echo $data['fhOrden']; ?></td>
-					<td><button id="<?php echo $data['FolioCanje']; ?>"  type="button" class="info-data" data-toggle="modal" data-target="#moreInfo" onclick="verMasInfo(this)"><i class="fas fa-info-circle"></i></button></td>
+					<td><a href="http://www.opisa.com/sio/Welcome/verMasCanje/?folio=<?php echo $data['FolioCanje']; ?>" target="_blank" class="info-data"><i class="fas fa-info-circle"></i></a></td>
                     <td><a href="http://www.opisa.com/sio/Welcome/detalleCanje/?folio=<?php echo $data['FolioCanje']; ?>" target="_blank" class="info-data"><i class="fas fa-info-circle"></i></a></td>
                 </tr>
                 <?php } ?>
