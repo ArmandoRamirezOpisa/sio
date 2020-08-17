@@ -23,7 +23,7 @@
                     <td><?php echo $data['Nombre']; ?></td>
                     <td><?php echo $data['fhOrden']; ?></td>
 					<td><a href="http://www.opisa.com/sio/Welcome/verMasCanje/?folio=<?php echo $data['FolioCanje']; ?>" target="_blank" class="info-data"><i class="fas fa-info-circle"></i></a></td>
-                    <td><a href="http://www.opisa.com/sio/Welcome/detalleCanje/?folio=<?php echo $data['FolioCanje']; ?>" target="_blank" class="info-data"><i class="fas fa-info-circle"></i></a></td>
+                    <td><a href="http://www.opisa.com/sio/Welcome/detalleCanje/?folio=<?php echo $data['FolioCanje']; ?>" target="_blank" class="info-data"><i class="fas fa-edit"></i></a></td>
                 </tr>
                 <?php } ?>
             </tbody>

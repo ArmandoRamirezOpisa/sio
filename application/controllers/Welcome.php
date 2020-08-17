@@ -136,6 +136,16 @@ class Welcome extends CI_Controller {
 		$this->load->view('busquedaCanje/detalleCanje',$data);
 	}
 
+	public function mensajeria(){
+		$mensajerias = $this->Sio_model->mensajeriaData();
+        if ($mensajerias){
+            $data["mensajerias"] = $mensajerias;
+        }else{
+            $data["mensajerias"] = false;
+        }
+        $this->load->view('mesajerias_view',$data);
+	}
+
 	public function confirmarTarjetasEntregadas(){
 		$this->load->view('confirmarTarjetasEntregadas_view');
 		$this->load->view('modales/modalTarjetasEntregadas');

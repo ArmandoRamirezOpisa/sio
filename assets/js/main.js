@@ -154,30 +154,30 @@ function sendData(url, opcion, info) {
     });
 }
 
-/*function verMasInfo(id) {
-    var folioCanje = id.id;
+function loadMensajerias() {
     $.ajax({
-        url: 'http://www.opisa.com/sio/Welcome/moreInfo',
+        url: 'http://www.opisa.com/sio/Welcome/mensajeria',
         async: 'true',
         cache: false,
         contentType: "application/x-www-form-urlencoded",
         global: true,
+        dataType: "html",
         ifModified: false,
         processData: true,
-        data: { "folioCanje": folioCanje },
         beforeSend: function() {},
         success: function(result) {
-            if (result == "0") {
-                window.location.reload();
+            if (result) {
+                $('#mensajerias').show();
+                $('#mensajerias').html(result);
             } else {
-                $('#modalBodyMoreInfo').html(result);
+                window.location.reload();
             }
         },
         error: function(object, error, anotherObject) {},
-        timeout: 30000,
+        /*timeout: 30000,*/
         type: "POST"
     });
-}*/
+}
 
 function editInfoCanje(id) {
     let idBtn = id.id;

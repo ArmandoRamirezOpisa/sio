@@ -109,14 +109,11 @@ class Sio_model extends CI_Model {
         }
 	}
 	
-	function dataMensajeria(){
-		$resultado = "select mensajeria from Mensajerias;";
-        $query1 = $this->db->query($resultado);
-        if($query1){
-			$data = $query1->result();
-			$query1->next_result(); 
-			$query1->free_result();
-			return $data;
+	function mensajeriaData(){
+		$resultado = "CALL spu_Get_ListMensajeria();";
+        $queryMensajeria = $this->db->query($resultado);
+        if($queryMensajeria){
+			return $query->result_array();
         }else{
             return false;
         }

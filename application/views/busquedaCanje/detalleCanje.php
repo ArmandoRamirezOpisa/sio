@@ -9,12 +9,12 @@
 	<title>Informacion del Canje</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark contentAnimated">
         <a id="homeSIO" class="navbar-brand" href="#">
             <img src="../../assets/img/sioLogo.jpg" width="50" height="30" class="d-inline-block align-top" alt="">
         </a>
     </nav>
-	<div class="container">
+	<div class="container contentAnimated">
 		<h1>Información Canje</h1>
 		<div class="row">
     		<div class="col">
@@ -137,21 +137,14 @@
 			</div>
   		</div>
 	</div>
-	<div class="container">
+	<div class="container contentAnimated">
 		<hr>
 		<h2>Informacion Canje Detalle</h2>
 		<div class="row">
 			<div class="col">
 				<div class="form-group row">
     				<label for="mensajeria" class="col-sm-2 col-form-label">Mensajeria: </label>
-    				<div class="col-sm-10">
-						<select class="form-control" id="mensajeria">
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-    					</select>
+    				<div id="mensajerias" class="col-sm-10">
     				</div>
   				</div>
 			</div>
@@ -203,7 +196,7 @@
 		</div>
 	</div>
 	<hr>
-	<div class="container">
+	<div class="container contentAnimated">
 		<table class="table">
             <thead class="thead-dark">
                 <tr>
@@ -237,5 +230,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="../../assets/js/main.js"></script>
+	<script>
+		if(window.onload) {
+        	loadMensajerias();
+        }
+	</script>
 </body>
 </html>
