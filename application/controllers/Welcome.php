@@ -142,8 +142,9 @@ class Welcome extends CI_Controller {
             $data["mensajerias"] = $mensajerias;
         }else{
             $data["mensajerias"] = false;
-        }
-        $this->load->view('mesajerias_view',$data);
+		}
+		//$this->output->set_output(json_encode($data["mensajerias"]));
+        $this->load->view('busquedaCanje/mesajerias_view',$data);
 	}
 
 	public function confirmarTarjetasEntregadas(){

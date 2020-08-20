@@ -21,7 +21,7 @@
 				<div class="form-group row">
     				<label for="calle" class="col-sm-2 col-form-label">Calle: </label>
     				<div class="col-sm-10">
-      					<input type="text" class="form-control" id="folioCanje" value="<?php echo $moreDataSearch[0]['Calle']; ?>" placeholder="Folio Canje">
+      					<input type="text" class="form-control" id="folioCanje" value="<?php echo $moreDataSearch[0]['Calle']; ?>" placeholder="Folio Canje" disabled>
     				</div>
   				</div>
 			</div>
@@ -29,7 +29,7 @@
 				<div class="form-group row">
     				<label for="Colonia" class="col-sm-2 col-form-label">Colonia: </label>
     				<div class="col-sm-10">
-      					<input type="text" class="form-control" id="colonia" value="<?php echo $moreDataSearch[0]['Colonia']; ?>" placelholder="Colonia">
+      					<input type="text" class="form-control" id="colonia" value="<?php echo $moreDataSearch[0]['Colonia']; ?>" placelholder="Colonia" disabled>
     				</div>
   				</div>
 			</div>
@@ -38,7 +38,7 @@
 				<div class="form-group row">
     				<label for="ciudad" class="col-sm-2 col-form-label">Ciudad: </label>
     				<div class="col-sm-10">
-      					<input type="text" class="form-control" id="ciudad" value="<?php echo $moreDataSearch[0]['Ciudad']; ?>" placeholder="Ciudad">
+      					<input type="text" class="form-control" id="ciudad" value="<?php echo $moreDataSearch[0]['Ciudad']; ?>" placeholder="Ciudad" disabled>
     				</div>
   				</div>
 			</div>
@@ -46,7 +46,7 @@
 				<div class="form-group row">
     				<label for="Estado" class="col-sm-2 col-form-label">Estado: </label>
     				<div class="col-sm-10">
-      					<input type="text" class="form-control" id="estado" value="<?php echo $moreDataSearch[0]['Estado']; ?>" placelholder="Estado">
+      					<input type="text" class="form-control" id="estado" value="<?php echo $moreDataSearch[0]['Estado']; ?>" placelholder="Estado" disabled>
     				</div>
   				</div>
 			</div>
@@ -55,7 +55,7 @@
 				<div class="form-group row">
     				<label for="cp" class="col-sm-2 col-form-label">CP: </label>
     				<div class="col-sm-10">
-      					<input type="text" class="form-control" id="cp" value="<?php echo $moreDataSearch[0]['cp']; ?>" placeholder="cp">
+      					<input type="text" class="form-control" id="cp" value="<?php echo $moreDataSearch[0]['cp']; ?>" placeholder="cp" disabled>
     				</div>
   				</div>
 			</div>
@@ -63,7 +63,7 @@
 				<div class="form-group row">
     				<label for="Pais" class="col-sm-2 col-form-label">Pais: </label>
     				<div class="col-sm-10">
-      					<input type="text" class="form-control" id="pais" value="<?php echo $moreDataSearch[0]['Pais']; ?>" placelholder="Pais">
+      					<input type="text" class="form-control" id="pais" value="<?php echo $moreDataSearch[0]['Pais']; ?>" placelholder="Pais" disabled>
     				</div>
   				</div>
 			</div>
@@ -72,7 +72,7 @@
 				<div class="form-group row">
     				<label for="Telefono" class="col-sm-2 col-form-label">Telefono: </label>
     				<div class="col-sm-10">
-      					<input type="text" class="form-control" id="telefono" value="<?php echo $moreDataSearch[0]['Telefono']; ?>" placeholder="Telefono">
+      					<input type="text" class="form-control" id="telefono" value="<?php echo $moreDataSearch[0]['Telefono']; ?>" placeholder="Telefono" disabled>
     				</div>
   				</div>
 			</div>
@@ -80,7 +80,7 @@
 				<div class="form-group row">
     				<label for="eMail" class="col-sm-2 col-form-label">eMail: </label>
     				<div class="col-sm-10">
-      					<input type="text" class="form-control" id="eMail" value="<?php echo $moreDataSearch[0]['eMail']; ?>" placelholder="Correo Electronico">
+      					<input type="text" class="form-control" id="eMail" value="<?php echo $moreDataSearch[0]['eMail']; ?>" placelholder="Correo Electronico" disabled>
     				</div>
   				</div>
 			</div>
@@ -89,7 +89,7 @@
 				<div class="form-group row">
     				<label for="PO" class="col-sm-2 col-form-label">PO: </label>
     				<div class="col-sm-10">
-      					<input type="text" class="form-control" id="po" value="<?php echo $moreDataSearch[0]['PO']; ?>" placeholder="PO">
+      					<input type="text" class="form-control" id="po" value="<?php echo $moreDataSearch[0]['PO']; ?>" placeholder="PO" disabled>
     				</div>
   				</div>
 			</div>
@@ -97,7 +97,7 @@
 				<div class="form-group row">
     				<label for="Atencion" class="col-sm-2 col-form-label">Atencion: </label>
     				<div class="col-sm-10">
-      					<input type="text" class="form-control" id="atencion" value="<?php echo $moreDataSearch[0]['Atencion']; ?>" placelholder="Atencion">
+      					<input type="text" class="form-control" id="atencion" value="<?php echo $moreDataSearch[0]['Atencion']; ?>" placelholder="Atencion" disabled>
     				</div>
   				</div>
 			</div>
@@ -106,7 +106,7 @@
 				<div class="form-group row">
     				<label for="Company" class="col-sm-2 col-form-label">Company: </label>
     				<div class="col-sm-10">
-      					<input type="text" class="form-control" id="company" value="<?php echo $moreDataSearch[0]['Company']; ?>" placeholder="Company">
+      					<input type="text" class="form-control" id="company" value="<?php echo $moreDataSearch[0]['Company']; ?>" placeholder="Company" disabled>
     				</div>
   				</div>
 			</div>
@@ -114,7 +114,7 @@
 				<div class="form-group row">
     				<label for="Cantidad" class="col-sm-2 col-form-label">Cantidad: </label>
     				<div class="col-sm-10">
-      					<input type="text" class="form-control" id="cantidad" value="<?php echo $moreDataSearch[0]['Cantidad']; ?>" placelholder="Atencion">
+      					<input type="text" class="form-control" id="cantidad" value="<?php echo $moreDataSearch[0]['Cantidad']; ?>" placelholder="Atencion" disabled>
     				</div>
   				</div>
 			</div>
@@ -123,7 +123,7 @@
 				<div class="form-group row">
     				<label for="Empresa" class="col-sm-2 col-form-label">Empresa: </label>
     				<div class="col-sm-10">
-      					<input type="text" class="form-control" id="empresa" value="<?php echo $moreDataSearch[0]['Empresa']; ?>" placeholder="Empresa">
+      					<input type="text" class="form-control" id="empresa" value="<?php echo $moreDataSearch[0]['Empresa']; ?>" placeholder="Empresa" disabled>
     				</div>
   				</div>
 			</div>
@@ -131,7 +131,7 @@
 				<div class="form-group row">
     				<label for="Stock" class="col-sm-2 col-form-label">Stock: </label>
     				<div class="col-sm-10">
-      					<input type="text" class="form-control" id="stock" value="<?php echo $moreDataSearch[0]['Stock']; ?>" placelholder="Stock">
+      					<input type="text" class="form-control" id="stock" value="<?php echo $moreDataSearch[0]['Stock']; ?>" placelholder="Stock" disabled>
     				</div>
   				</div>
 			</div>
@@ -140,7 +140,7 @@
 				<div class="form-group row">
     				<label for="Programacion" class="col-sm-2 col-form-label">Programacion: </label>
     				<div class="col-sm-10">
-      					<input type="text" class="form-control" id="programacion" value="<?php echo $moreDataSearch[0]['Programacion']; ?>" placeholder="Programacion">
+      					<input type="text" class="form-control" id="programacion" value="<?php echo $moreDataSearch[0]['Programacion']; ?>" placeholder="Programacion" disabled>
     				</div>
   				</div>
 			</div>
@@ -148,7 +148,7 @@
 				<div class="form-group row">
     				<label for="Envio" class="col-sm-2 col-form-label">Envio: </label>
     				<div class="col-sm-10">
-      					<input type="text" class="form-control" id="envio" value="<?php echo $moreDataSearch[0]['Envio']; ?>" placelholder="Envio">
+      					<input type="text" class="form-control" id="envio" value="<?php echo $moreDataSearch[0]['Envio']; ?>" placelholder="Envio" disabled>
     				</div>
   				</div>
 			</div>
@@ -157,7 +157,7 @@
 				<div class="form-group row">
     				<label for="Comentario" class="col-sm-2 col-form-label">Comentario: </label>
     				<div class="col-sm-10">
-      					<input type="text" class="form-control" id="comentario" value="<?php echo $moreDataSearch[0]['Comentario']; ?>" placeholder="Comentario">
+      					<input type="text" class="form-control" id="comentario" value="<?php echo $moreDataSearch[0]['Comentario']; ?>" placeholder="Comentario" disabled>
     				</div>
   				</div>
 			</div>
@@ -165,7 +165,7 @@
 				<div class="form-group row">
     				<label for="Guia" class="col-sm-2 col-form-label">Guia: </label>
     				<div class="col-sm-10">
-      					<input type="text" class="form-control" id="guia" value="<?php echo $moreDataSearch[0]['Guia']; ?>" placelholder="Guia">
+      					<input type="text" class="form-control" id="guia" value="<?php echo $moreDataSearch[0]['Guia']; ?>" placelholder="Guia" disabled>
     				</div>
   				</div>
 			</div>
@@ -174,14 +174,14 @@
 				<div class="form-group row">
     				<label for="Status" class="col-sm-2 col-form-label">Status: </label>
     				<div class="col-sm-10">
-      					<input type="text" class="form-control" id="status" value="<?php echo $moreDataSearch[0]['Status']; ?>" placeholder="Status">
+      					<input type="text" class="form-control" id="status" value="<?php echo $moreDataSearch[0]['Status']; ?>" placeholder="Status" disabled>
     				</div>
   				</div>
 			</div>
 			<div class="col">
 				<div class="form-group row">
     				<div class="col-sm-10">
-						<button type="button" class="btn btn-dark"><i class="fas fa-save"></i> Guardar</button>
+						<button type="button" class="btn btn-dark" style="display:none;"><i class="fas fa-save"></i> Guardar</button>
     				</div>
   				</div>
 			</div>

@@ -113,7 +113,7 @@ class Sio_model extends CI_Model {
 		$resultado = "CALL spu_Get_ListMensajeria();";
         $queryMensajeria = $this->db->query($resultado);
         if($queryMensajeria){
-			return $query->result_array();
+			return $queryMensajeria->result_array();
         }else{
             return false;
         }

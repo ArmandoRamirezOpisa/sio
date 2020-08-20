@@ -221,7 +221,7 @@
                     <td>asd</td>
 					<td>a;sdl</td>
                     <td>asd</td>
-					<td>editar</td>
+					<td><i class="fas fa-edit editarBtn"></i></td>
                 </tr>
             </tbody>
         </table>
@@ -231,9 +231,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="../../assets/js/main.js"></script>
 	<script>
-		if(window.onload) {
-        	loadMensajerias();
-        }
+		loadMensajerias();
 	</script>
 </body>
 </html>

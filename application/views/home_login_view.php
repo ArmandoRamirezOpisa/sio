@@ -48,11 +48,11 @@
                         <div class="form-group">
                             <label for="exampleInputEmail1">Usuario</label>
                             <input type="text" class="form-control" id="usuarioSio" aria-describedby="text" placeholder="Escribe tu usuario...">
-                            <small id="emailHelp" class="form-text text-muted">No compartas tu usuario.</small>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Password</label>
                             <input type="password" class="form-control" id="passwordSio" placeholder="Escribe tu password">
+                            <small id="emailHelp" class="form-text text-muted">No compartas tu usuario y tu contraseña.</small>
                         </div>
                     </form>
                 </div>

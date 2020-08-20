@@ -12,8 +12,9 @@
         <h2>Estas seguro de salir?</h2>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-        <button type="button" id="salioSioWeb" class="btn btn-dark">Salir</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-window-close"></i> Cancelar</button>
+				<a href="http://www.opisa.com/sio/Welcome/salirSio" class="btn btn-dark"><i class="fas fa-sign-out-alt"></i>Salir</a>
+        <!-- <button type="button" id="salioSioWeb" class="btn btn-dark"> <i class="fas fa-sign-out-alt"></i>Salir</button> -->
       </div>
     </div>
   </div>

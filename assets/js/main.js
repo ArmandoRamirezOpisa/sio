@@ -167,6 +167,7 @@ function loadMensajerias() {
         beforeSend: function() {},
         success: function(result) {
             if (result) {
+                //console.log(result);
                 $('#mensajerias').show();
                 $('#mensajerias').html(result);
             } else {
@@ -175,7 +176,7 @@ function loadMensajerias() {
         },
         error: function(object, error, anotherObject) {},
         /*timeout: 30000,*/
-        type: "POST"
+        type: "GET"
     });
 }
 
@@ -530,5 +531,5 @@ function cambiarPassword() {
 salioSioWeb.addEventListener('click', salioSioWebScrren);
 
 function salioSioWebScrren() {
-    location.href = "http://" + location.hostname + "/opisio.com.mx/Welcome/salirSio";
+    location.href = "http://www.opisa.com/sio/Welcome/salirSio";
 }
