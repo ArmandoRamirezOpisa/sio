@@ -129,6 +129,19 @@
 			</div>
     		<div class="col">
 				<div class="form-group row">
+    				<label for="comentarios" class="col-sm-2 col-form-label">Cancelar orden: </label>
+    				<div class="col-sm-10">
+						<select class="form-control" id="cancelOrden">
+							<option>Si</option>
+							<option>No</option>
+    					</select>
+    				</div>
+  				</div>
+			</div>
+			<div class="w-100"></div>
+			<div class="col"></div>
+    		<div class="col">
+				<div class="form-group row">
     				<label for="comentarios" class="col-sm-2 col-form-label">Comentarios: </label>
     				<div class="col-sm-10">
 						<textarea class="form-control" id="comentarios" rows="3"><?php if($dataEditarCanje[0]['comentarios'] != 'NULL'){ echo $dataEditarCanje[0]['comentarios'];} ?></textarea>
